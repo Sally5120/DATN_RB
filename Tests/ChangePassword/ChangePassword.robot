@@ -2,8 +2,6 @@
 Resource   ChangePassword_User_Defined_Keyword.resource
 Test Setup  Start Testcase
 Test Teardown   Finish Testcase
-
-
 *** Test Cases ***
 CP01_Verify Change Password Successful
      [Tags]     Change Password
