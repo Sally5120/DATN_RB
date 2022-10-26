@@ -1,5 +1,5 @@
 *** Settings ***
-Resource   ../../Commons/Common.resource
+Resource   ../../../Commons/Common.resource
 *** Variables ***
 
 *** Keywords ***
