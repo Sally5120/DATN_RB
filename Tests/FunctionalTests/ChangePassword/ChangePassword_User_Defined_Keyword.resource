@@ -1,5 +1,5 @@
 *** Settings ***
-Resource   ../../Commons/Common.resource
+Resource   ../../../Commons/Common.resource
 *** Variables ***
 ${locator_password_new}         //input[@name="matkhaumoi"]
 ${locator_re_enter_password}    //input[@name="nhaplai"]
