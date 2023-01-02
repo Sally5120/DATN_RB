@@ -4,10 +4,12 @@ Resource    Common.resource
 *** Keywords ***
 Start Testcase
     Open Browser    ${url_local_admin}   ${browser}
+#    Open Browser    ${url_production_admin}   ${browser}
     Maximize Browser Window
 
 Start Testcase Page
     Open Browser    ${url_local_page}  ${browser}
+#    Open Browser    ${url_production_page}   ${browser}
     Maximize Browser Window
 
 Finish TestCase

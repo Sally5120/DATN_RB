@@ -57,8 +57,8 @@ UPDATE02-Verify update course
 UPDATE03-Check the course update already exists
     [Tags]      Check update Course
     Redirect edit course page    //tbody/tr[1]/td[8]/a[1]
-                                                #Tên khóa học       #Tóm tắt  #Thông tin   #Số lượng học viên  #Hình ảnh                           #Môn học        #Giáo viên            #Lịch khai giảng(dd/mm/yyyy)     #Trạng thái
-    Update course                                Luyện thi vật lý   Tóm tắt    Hà Nội        15                ${image}\\Courses\\hoa10.png      Môn Vật Lý    Nguyễn Văn C             12122022                        Không kích hoạt
+                                                #Tên khóa học       #Tóm tắt            #Thông tin   #Số lượng học viên  #Hình ảnh                           #Môn học        #Giáo viên            #Lịch khai giảng(dd/mm/yyyy)     #Trạng thái
+    Update course                                Luyện thi vật lý   Luyện thi vật lý    Luyện thi vật lý        15                ${image}\\Courses\\hoa10.png      Môn Vật Lý    Nguyễn Văn C             12122022                        Không kích hoạt
     Wait Until Page Contains                  Tiêu đề khóa học đã có.Vui lòng điền tên khác
 
 

@@ -55,8 +55,8 @@ UPDATE02-Verify update new
 UPDATE03-Check the new update already exists
     [Tags]      Check update new
     Redirect edit new page    //tbody/tr[1]/td[5]/a[1]
-                                 #Tên tin tức    #Tóm tắt    #Thông  tin   #Hình ảnh                           #Trạng thái
-    Update new                   Nguyễn Văn C     Tóm tắt     Hà Nội       ${image}\\News\\tintuc1.jpg      Không kích hoạt
+                                 #Tên tin tức                                 #Tóm tắt    #Thông  tin   #Hình ảnh                           #Trạng thái
+    Update new                   Tin tức mới nhất về kỳ thi THPT quốc gia     Tóm tắt     Hà Nội       ${image}\\News\\tintuc1.jpg      Không kích hoạt
     Wait Until Page Contains             Tiêu đề tin tức đã có.Vui lòng điền tiêu đề khác
 
 UPDATE04-Check maxlength update
@@ -86,9 +86,9 @@ DELETE-Check delete new successfully
 SEARCH01-Check search find data
     [Tags]      Search
     Redirect search new page
-    Input Text    //input[@type='search']    Nguyễn Văn C
+    Input Text    //input[@type='search']    Tin tức mới nhất về kỳ thi THPT quốc gia
     Sleep    3s
-    Page Should Contain    Nguyễn Văn C
+    Page Should Contain    Tin tức mới nhất về kỳ thi THPT quốc gia
 
 SEARCH02-Check search not find data
     [Tags]      Search

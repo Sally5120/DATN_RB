@@ -75,6 +75,7 @@ DELETE-Check delete subject successfully
     [Tags]      Check Delete subject
     Redirect delete subject page    //tbody/tr[1]/td[4]/form[1]/button[1]
     Delete subject
+    Sleep    5s
     Wait Until Page Contains    Xóa danh mục môn học thành công
 
 
