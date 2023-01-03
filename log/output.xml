@@ -1,109 +1,120 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.12 on win32)" generated="20230102 20:58:51.882" rpa="false" schemaversion="2">
-<suite id="s1" name="Home" source="C:\Users\nguye\PycharmProjects\DATN_RF\Tests\API_Test\Home\Home.robot">
-<test id="s1-t1" name="TC02_Check_get_news">
-<kw name="create_new_session" library="Home" type="SETUP">
+<robot generator="Robot 4.1.2 (Python 3.9.12 on win32)" generated="20230103 22:22:52.279" rpa="false" schemaversion="2">
+<suite id="s1" name="Contact" source="C:\Users\nguye\PycharmProjects\DATN_RF\Tests\API_Test\Contacts\Contact.robot">
+<test id="s1-t1" name="TC01_Contact_Successfully">
+<kw name="create_new_session" library="Contact" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_local_page}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230103 22:22:52.889" level="INFO">Opening browser 'headlesschrome' to base url 'http://localhost/Project/tschool'.</msg>
+<status status="PASS" starttime="20230103 22:22:52.887" endtime="20230103 22:22:57.869"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[contains(text(),'Liên hệ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230103 22:22:57.870" level="INFO">Clicking element '//a[contains(text(),'Liên hệ')]'.</msg>
+<status status="PASS" starttime="20230103 22:22:57.869" endtime="20230103 22:22:58.180"/>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<var>${cookie_value}</var>
+<arg>XSRF-TOKEN</arg>
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<msg timestamp="20230103 22:22:58.232" level="INFO">${cookie_value} = name=XSRF-TOKEN
+value=eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbHhkZFRzSTBLWnVCeE1Od3NYTFZMaTUxQk...</msg>
+<status status="PASS" starttime="20230103 22:22:58.181" endtime="20230103 22:22:58.232"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230103 22:22:58.232" endtime="20230103 22:23:00.289"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>X-XSRF-TOKEN=${cookie_value.value}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230103 22:23:00.292" level="INFO">${header} = {'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbH...</msg>
+<status status="PASS" starttime="20230103 22:23:00.290" endtime="20230103 22:23:00.293"/>
+</kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>myssion</arg>
 <arg>${base_url}</arg>
+<arg>headers=${header}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230102 20:58:52.387" level="INFO">Creating Session using : alias=myssion, url=http://localhost/Project/tschool/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230102 20:58:52.387" endtime="20230102 20:58:52.389"/>
+<msg timestamp="20230103 22:23:00.294" level="INFO">Creating Session using : alias=myssion, url=http://localhost/Project/tschool/api, headers={'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbHhkZFRzSTBLWnVCeE1Od3NYTFZMaTUxQkNQOW1VVEVtOVBmVEV0bW1QeGZub3FINDljZFFSMzVzRGRWOGQiLCJtYWMiOiJjNzdhZTFiOGZmMTdlMTg2OGRkMjQ2NzkzMzZmYWE3YjYxNjE0MWE5YjBmY2RjZTc4Nzc1ODVlMWM4NGI2ZDI5IiwidGFnIjoiIn0%3D'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230103 22:23:00.293" endtime="20230103 22:23:00.295"/>
 </kw>
-<status status="PASS" starttime="20230102 20:58:52.386" endtime="20230102 20:58:52.389"/>
+<status status="PASS" starttime="20230103 22:22:52.887" endtime="20230103 22:23:00.295"/>
 </kw>
-<kw name="check_get_news" library="Home">
-<arg>news[0]</arg>
-<arg>Tin tức mới nhất về kỳ thi THPT quốc gia</arg>
-<kw name="GET On Session" library="RequestsLibrary">
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=test</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230103 22:23:00.296" level="INFO">${body} = {'hoten': 'test', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230103 22:23:00.296" endtime="20230103 22:23:00.297"/>
+</kw>
+<kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
 <arg>myssion</arg>
-<arg>${base_url}</arg>
-<doc>Sends a GET request on a previously created HTTP Session.</doc>
-<msg timestamp="20230102 20:58:52.597" level="INFO">GET Request : url=http://localhost/Project/tschool/api 
- path_url=/Project/tschool/api 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
- body=None 
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230103 22:23:00.616" level="INFO">POST Request : url=http://localhost/Project/tschool/api/contact 
+ path_url=/Project/tschool/api/contact 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbHhkZFRzSTBLWnVCeE1Od3NYTFZMaTUxQkNQOW1VVEVtOVBmVEV0bW1QeGZub3FINDljZFFSMzVzRGRWOGQiLCJtYWMiOiJjNzdhZTFiOGZmMTdlMTg2OGRkMjQ2NzkzMzZmYWE3YjYxNjE0MWE5YjBmY2RjZTc4Nzc1ODVlMWM4NGI2ZDI5IiwidGFnIjoiIn0%3D', 'Content-Length': '99'} 
+ body=b'{"hoten": "test", "email": "test@gmail.com", "sodienthoai": "8528888820", "khoahocquantam": "test"}' 
  </msg>
-<msg timestamp="20230102 20:58:52.597" level="INFO">GET Response : url=http://localhost/Project/tschool/api 
+<msg timestamp="20230103 22:23:00.616" level="INFO">POST Response : url=http://localhost/Project/tschool/api/contact 
  status=200, reason=OK 
- headers={'Date': 'Mon, 02 Jan 2023 13:58:52 GMT', 'Server': 'Apache/2.4.51 (Win64) OpenSSL/1.1.1l PHP/7.4.26', 'X-Powered-By': 'PHP/7.4.26', 'Cache-Control': 'no-cache, private', 'Access-Control-Allow-Origin': '*', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json'} 
- body={"course":[{"id":26,"id_monhoc":8,"id_giaovien":22,"tieude":"Luy\u1ec7n Thi V\u1eadt L\u00fd 10","slug_post":"luyen-thi-vat-ly-10","tomtat":"Luy\u1ec7n Thi V\u1eadt L\u00fd 10","noidung":"Luy\u1ec7n Thi V\u1eadt L\u00fd 10","Soluonghocvien":15,"hinhanh":"vatly1045.png","lichkhaigiang":"2022-10-28","views":null,"kichhoat":0,"created_at":"2022-10-27 19:59:05","updated_at":"2022-10-27 20:43:10"},{"id":25,"id_monhoc":22,"id_giaovien":22,"tieude":"Luy\u1ec7n thi H\u00f3a 12","slug_post":"luyen-thi-hoa-12","tomtat":"Luy\u1ec7n thi H\u00f3a 12","noidung":"Luy\u1ec7n thi H\u00f3a 12","Soluonghocvien":15,"hinhanh":"hoa1265.png","lichkhaigiang":"2022-10-30","views":null,"kichhoat":0,"created_at":"2022-10-27 19:52:08","updated_at":"2022-10-27 20:43:28"},{"id":24,"id_monhoc":22,"id_giaovien":22,"tieude":"Luy\u1ec7n thi H\u00f3a 11","slug_post":"luyen-thi-hoa-11","tomtat":"Luy\u1ec7n thi H\u00f3a 11","noidung":"Luy\u1ec7n thi H\u00f3a 11","Soluonghocvien":15,"hinhanh":"hoa1175.png","lichkhaigiang":"2022-10-30","views":null,"kichhoat":0,"created_at":"2022-10-27 19:51:36","updated_at":"2022-10-27 20:43:39"},{"id":19,"id_monhoc":8,"id_giaovien":22,"tieude":"Luy\u1ec7n thi v\u1eadt l\u00fd","slug_post":"luyen-thi-vat-ly","tomtat":"Luy\u1ec7n thi v\u1eadt l\u00fd","noidung":"Luy\u1ec7n thi v\u1eadt l\u00fd","Soluonghocvien":15,"hinhanh":"vatly1238.png","lichkhaigiang":"2022-10-08","views":1,"kichhoat":0,"created_at":"2022-10-08 22:06:12","updated_at":"2022-10-27 20:43:52"}],"news":[{"id":8,"tieude":"Tin t\u1ee9c m\u1edbi nh\u1ea5t v\u1ec1 k\u1ef3 thi THPT qu\u1ed1c gia","slug_tintuc":"tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia","tomtat":"&lt;p&gt;C&amp;ocirc;ng v\u0103n 1986\/BGD\u0110T-CNTT c\u1ee7a B\u1ed9 Gi&amp;aacute;o d\u1ee5c v&amp;agrave; \u0110&amp;agrave;o t\u1ea1o \u0111&amp;atilde; c\u00f4ng b\u1ed1 danh s&amp;aacute;ch m\u1ed9t s\u1ed1 m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i \u0111\u01b0\u1ee3c mang v&amp;agrave;o trong ph&amp;ograve;ng thi trong K\u1ef3 thi t\u1ed1t nghi\u1ec7p trung h\u1ecdc ph\u1ed5 th&amp;ocirc;ng (THPT) n\u0103m 2021.&lt;\/p&gt;","noidung":"&lt;p&gt;&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;img alt=\"Danh s\u00e1ch m\u00e1y t\u00ednh \u0111\u01b0\u1ee3c mang v\u00e0o ph\u00f2ng thi t\u1ed1t nghi\u1ec7p THPT 2021\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/153629-de-thi-dap-an-thpt-quoc-gia-2018-baogiaothong-10.jpg\" width=\"650\" \/&gt;&lt;\/p&gt;\r\n\r\n&lt;h3&gt;&amp;nbsp;&lt;\/h3&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p style=\"text-align:center\"&gt;&lt;strong&gt;M\u1ee4C L\u1ee4C&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Danh s&amp;aacute;ch m\u1ed9t s\u1ed1 m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i th&amp;ocirc;ng d\u1ee5ng \u0111\u01b0\u1ee3c ph&amp;eacute;p mang v&amp;agrave;o ph&amp;ograve;ng thi trong k\u1ef3 thi t\u1ed1t nghi\u1ec7p trung h\u1ecdc ph\u1ed5 th&amp;ocirc;ng n\u0103m 2021 l&amp;agrave;:&lt;\/p&gt;\r\n\r\n&lt;p&gt;Theo C&amp;ocirc;ng v\u0103n n&amp;agrave;y, v\u1ec1 nguy&amp;ecirc;n t\u1eafc chung: M&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i \u0111\u01b0\u1ee3c ph&amp;eacute;p mang v&amp;agrave;o ph&amp;ograve;ng thi l&amp;agrave; c&amp;aacute;c m&amp;aacute;y t&amp;iacute;nh kh&amp;ocirc;ng c&amp;oacute; ch\u1ee9c n\u0103ng so\u1ea1n th\u1ea3o v\u0103n b\u1ea3n, kh&amp;ocirc;ng c&amp;oacute; th\u1ebb nh\u1edb \u0111\u1ec3 l\u01b0u tr\u1eef d\u1eef li\u1ec7u v&amp;agrave; kh&amp;ocirc;ng th\u1ec3 truy\u1ec1n, nh\u1eadn \u0111\u01b0\u1ee3c th&amp;ocirc;ng tin, t&amp;iacute;n hi\u1ec7u &amp;acirc;m thanh, h&amp;igrave;nh \u1ea3nh tr\u1ef1c ti\u1ebfp.&lt;\/p&gt;\r\n\r\n&lt;h3&gt;&lt;strong&gt;Danh s&amp;aacute;ch m\u1ed9t s\u1ed1 m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i th&amp;ocirc;ng d\u1ee5ng \u0111\u01b0\u1ee3c ph&amp;eacute;p mang v&amp;agrave;o ph&amp;ograve;ng thi trong k\u1ef3 thi t\u1ed1t nghi\u1ec7p trung h\u1ecdc ph\u1ed5 th&amp;ocirc;ng n\u0103m 2021 l&amp;agrave;:&lt;\/strong&gt;&lt;\/h3&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;- Casio FX-500 MS, FX-570 MS, FX-570ES Plus, FX-570VN Plus, FX580VN X;&lt;\/li&gt;\r\n\t&lt;li&gt;- VinaCal 500MS, 570MS, 570ES Plus, 570ES Plus II, 570EX Plus, 680EX Plus;&lt;\/li&gt;\r\n\t&lt;li&gt;- Catel NT CAVIET NT-570ES Plus II, NT-570ES Plus, NT-500MS, NT570VN Plus, NT-580EX, NT-570NS, NT-690VE X;&lt;\/li&gt;\r\n\t&lt;li&gt;- Thi&amp;ecirc;n Long FX590VN Flexio, FX680VN Flexio; - Deli W1710, WD991ES; - Eras E370, E371, E372, E380;&lt;\/li&gt;\r\n\t&lt;li&gt;- Vinaplus FX-580VNX PLUS II, FX-580 X;&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n\r\n&lt;p&gt;v&amp;agrave; c&amp;aacute;c m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i t\u01b0\u01a1ng \u0111\u01b0\u01a1ng \u0111&amp;aacute;p \u1ee9ng theo quy \u0111\u1ecbnh&lt;\/p&gt;","hinhanh":"tintuc35.jpg","views":10,"kichhoat":0,"created_at":"2021-06-12T14:46:03.000000Z","updated_at":"2022-10-27T13:50:22.000000Z"},{"id":7,"tieude":"T\u1ed5 ch\u1ee9c thi \u0111\u00e1nh gi\u00e1 n\u0103ng l\u1ef1c trong \u0111i\u1ec1u ki\u1ec7n gi\u00e3n c\u00e1ch","slug_tintuc":"to-chuc-thi-danh-gia-nang-luc-trong-dieu-kien-gian-cach","tomtat":"&lt;p&gt;Tr\u01b0\u1edbc di\u1ec5n bi\u1ebfn ph\u1ee9c t\u1ea1p d\u1ecbch COVID-19, \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i th\u00f4ng b\u00e1o sinh \u0111&amp;atilde; \u0111\u0103ng k&amp;yacute; d\u1ef1 thi th&amp;agrave;nh c&amp;ocirc;ng c&amp;aacute;c \u0111\u1ee3t thi 211, 212 v&amp;agrave; 213 (1, 2, 3) s\u1ebd tham gia thi \u0111&amp;aacute;nh gi&amp;aacute; n\u0103ng l\u1ef1c trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch x&amp;atilde; h\u1ed9i.&lt;\/p&gt;","noidung":"&lt;p&gt;\u0110\u1ed1i t\u01b0\u1ee3ng d\u1ef1 thi trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch x&amp;atilde; h\u1ed9i l&amp;agrave; th&amp;iacute; sinh \u0111&amp;atilde; \u0111\u0103ng k&amp;yacute; d\u1ef1 thi th&amp;agrave;nh c&amp;ocirc;ng m\u1ed9t trong c&amp;aacute;c \u0111\u1ee3t thi 211, 212, 213; \u0111ang sinh s\u1ed1ng t\u1ea1i khu v\u1ef1c ch\u01b0a c&amp;oacute; ca F0, \u1ed5 d\u1ecbch COVID-19 ho\u1eb7c c&amp;oacute; ca b\u1ec7nh \u0111&amp;atilde; \u0111\u01b0\u1ee3c c\u01a1 quan y t\u1ebf x&amp;aacute;c \u0111\u1ecbnh kh\u1ecfi b\u1ec7nh, khu v\u1ef1c \u0111&amp;atilde; h\u1ebft c&amp;aacute;ch ly\/phong t\u1ecfa; kh&amp;ocirc;ng l&amp;agrave; \u0111\u1ed1i t\u01b0\u1ee3ng F1, F2 trong d\u1ecbch b\u1ec7nh COVID-19 t&amp;iacute;nh t\u1eeb ng&amp;agrave;y 15\/5\/2021.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/66qg2.jpg\" title=\"Ch\u00fa th\u00edch \u1ea3nh\"&gt;&lt;img alt=\"Ch\u00fa th\u00edch \u1ea3nh\" height=\"523\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/66qg2.jpg\" width=\"786\" \/&gt;&lt;\/a&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;\u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i chu\u1ea9n b\u1ecb c\u01a1 s\u1edf v\u1eadt ch\u1ea5t \u0111\u1ec3 th&amp;iacute; sinh thi trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch. \u1ea2nh: VNU.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Nh\u1eefng th&amp;iacute; sinh kh&amp;ocirc;ng \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n d\u1ef1 thi gi&amp;atilde;n c&amp;aacute;ch trong th&amp;aacute;ng 6\/2021 s\u1ebd tham gia thi khi \u0111&amp;aacute;p \u1ee9ng c&amp;aacute;c \u0111i\u1ec1u ki\u1ec7n n&amp;ecirc;u tr&amp;ecirc;n ho\u1eb7c khi ki\u1ec3m so&amp;aacute;t \u0111\u01b0\u1ee3c d\u1ecbch b\u1ec7nh COVID-19 trong c\u1ed9ng \u0111\u1ed3ng.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Trung t&amp;acirc;m Kh\u1ea3o th&amp;iacute; \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i d\u1ef1 ki\u1ebfn t\u1ed5 ch\u1ee9c c&amp;aacute;c ng&amp;agrave;y thi trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch x&amp;atilde; h\u1ed9i cho t\u1eebng \u0111\u1ee3t thi. Th&amp;iacute; sinh \u0111\u01b0\u1ee3c quy\u1ec1n thay \u0111\u1ed5i ca trong c&amp;ugrave;ng ng&amp;agrave;y ho\u1eb7c kh&amp;aacute;c ng&amp;agrave;y thi tr\u01b0\u1edbc khi h\u1ec7 th\u1ed1ng chuy\u1ec3n ca thi \u0111&amp;oacute;ng c\u1ed5ng.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/65qg1.png\" title=\"Ch\u00fa th\u00edch \u1ea3nh\"&gt;&lt;img alt=\"Ch\u00fa th\u00edch \u1ea3nh\" height=\"327\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/65qg1.png\" width=\"672\" \/&gt;&lt;\/a&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/65qg1.png\" title=\"Ch\u00fa th\u00edch \u1ea3nh\"&gt;Th\u1eddi gian c&amp;oacute; m\u1eb7t \u1edf ph&amp;ograve;ng thi.&lt;\/a&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Ph\u1ea7n m\u1ec1m ki\u1ec3m so&amp;aacute;t s\u1ed1 l\u01b0\u1ee3ng th&amp;iacute; sinh c\u1ee7a m\u1ed7i ca thi (t\u1ed1i \u0111a 9 - 10 th&amp;iacute; sinh\/ca thi) v&amp;agrave; th\u1eddi gian v&amp;agrave;o ph&amp;ograve;ng thi \u0111\u1ec3 \u0111\u1ea3m b\u1ea3o kh&amp;ocirc;ng qu&amp;aacute; 10 th&amp;iacute; sinh c&amp;oacute; m\u1eb7t t\u1ea1i khu v\u1ef1c ti\u1ebfp \u0111&amp;oacute;n th&amp;iacute; sinh.&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Tr\u01b0\u1edbc ng&amp;agrave;y thi 3 ng&amp;agrave;y, Trung t&amp;acirc;m Kh\u1ea3o th&amp;iacute; \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i h\u01b0\u1edbng d\u1eabn chi ti\u1ebft th\u1ee7 t\u1ee5c d\u1ef1 thi cho th&amp;iacute; sinh bao g\u1ed3m khai b&amp;aacute;o y t\u1ebf, th&amp;ocirc;ng \u0111i\u1ec7p 5K, v\u1eadt d\u1ee5ng mang v&amp;agrave;o ph&amp;ograve;ng thi, th&amp;ocirc;ng b&amp;aacute;o ng\u01b0\u1eddi nh&amp;agrave; th&amp;iacute; sinh h\u1ea1n ch\u1ebf c&amp;oacute; m\u1eb7t t\u1ea1i khu v\u1ef1c thi. Th&amp;iacute; sinh tu&amp;acirc;n th\u1ee7 tuy\u1ec7t \u0111\u1ed1i c&amp;aacute;c h\u01b0\u1edbng d\u1eabn c\u1ee7a Trung t&amp;acirc;m Kh\u1ea3o th&amp;iacute; tr\u01b0\u1edbc khi \u0111\u1ebfn \u0111\u1ecba \u0111i\u1ec3m thi.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Th\u1eddi gian \u0111\u0103ng k&amp;yacute; chuy\u1ec3n ca thi cho t\u1eebng \u0111\u1ee3t \u0111\u01b0\u1ee3c \u0111i\u1ec1u ch\u1ec9nh cho ph&amp;ugrave; h\u1ee3p v\u1edbi t&amp;igrave;nh h&amp;igrave;nh th\u1ef1c t\u1ebf, khu v\u1ef1c th&amp;iacute; sinh \u0111ang sinh s\u1ed1ng, \u0111\u1ecba b&amp;agrave;n ph&amp;ograve;ng d\u1ecbch.&lt;\/p&gt;\r\n\r\n&lt;p&gt;L\u1ecbch tr&amp;igrave;nh \u0111\u0103ng k&amp;yacute; chuy\u1ec3n ca thi v&amp;agrave; t\u1ed5 ch\u1ee9c thi d\u1ef1 ki\u1ebfn nh\u01b0 sau:&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/56qg2.png\" title=\"56qg2\"&gt;&lt;img alt=\"56qg2\" height=\"605\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/56qg2.png\" width=\"667\" \/&gt;&lt;\/a&gt;&lt;\/p&gt;","hinhanh":"tintuc219.jpg","views":5,"kichhoat":0,"created_at":"2021-06-12T14:36:04.000000Z","updated_at":"2022-10-27T13:52:25.000000Z"},{"id":6,"tieude":"C\u00f4ng b\u1ed1 ph\u01b0\u01a1ng \u00e1n tuy\u1ec3n sinh n\u0103m 2021 - CH\u00cdNH TH\u1ee8C","slug_tintuc":"cong-bo-phuong-an-tuyen-sinh-nam-2021-chinh-thuc","tomtat":"&lt;p&gt;Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc Lu\u1eadt H&amp;agrave; N\u1ed9i v\u1eeba c&amp;ocirc;ng b\u1ed1 \u0111\u1ec1 &amp;aacute;n ch&amp;iacute;nh th\u1ee9c tuy\u1ec3n sinh tr&amp;igrav... (set the log level to DEBUG or TRACE to see the full content) 
+ headers={'Date': 'Tue, 03 Jan 2023 15:23:00 GMT', 'Server': 'Apache/2.4.51 (Win64) OpenSSL/1.1.1l PHP/7.4.26', 'X-Powered-By': 'PHP/7.4.26', 'Cache-Control': 'no-cache, private', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'Access-Control-Allow-Origin': '*', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json'} 
+ body={"message":"add contact successfully"} 
  </msg>
-<msg timestamp="20230102 20:58:52.598" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230102 20:58:52.390" endtime="20230102 20:58:52.599"/>
-</kw>
-<kw name="Convert String To Json" library="JSONLibrary">
-<var>${json_object}</var>
-<arg>${response.content}</arg>
-<doc>Convert String to JSON object</doc>
-<msg timestamp="20230102 20:58:52.600" level="INFO">${json_object} = {'course': [{'id': 26, 'id_monhoc': 8, 'id_giaovien': 22, 'tieude': 'Luyện Thi Vật Lý 10', 'slug_post': 'luyen-thi-vat-ly-10', 'tomtat': 'Luyện Thi Vật Lý 10', 'noidung': 'Luyện Thi Vật Lý 10', 'Soluo...</msg>
-<status status="PASS" starttime="20230102 20:58:52.599" endtime="20230102 20:58:52.600"/>
-</kw>
-<kw name="Get Value From Json" library="JSONLibrary">
-<var>${news}</var>
-<arg>${json_object}</arg>
-<arg>$.${data}</arg>
-<doc>Get Value From JSON using JSONPath</doc>
-<msg timestamp="20230102 20:58:52.625" level="INFO">${news} = [{'id': 8, 'tieude': 'Tin tức mới nhất về kỳ thi THPT quốc gia', 'slug_tintuc': 'tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia', 'tomtat': '&lt;p&gt;C&amp;ocirc;ng văn 1986/BGDĐT-CNTT của Bộ Gi&amp;aacute;o dục v&amp;agrave...</msg>
-<status status="PASS" starttime="20230102 20:58:52.600" endtime="20230102 20:58:52.625"/>
-</kw>
-<kw name="Convert To String" library="BuiltIn">
-<var>${result}</var>
-<arg>${news[0]}</arg>
-<doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230102 20:58:52.627" level="INFO">${result} = {'id': 8, 'tieude': 'Tin tức mới nhất về kỳ thi THPT quốc gia', 'slug_tintuc': 'tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia', 'tomtat': '&lt;p&gt;C&amp;ocirc;ng văn 1986/BGDĐT-CNTT của Bộ Gi&amp;aacute;o dục v&amp;agrave;...</msg>
-<status status="PASS" starttime="20230102 20:58:52.626" endtime="20230102 20:58:52.627"/>
-</kw>
-<kw name="Should Contain" library="BuiltIn">
-<arg>${result}</arg>
-<arg>${result_d}</arg>
-<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230102 20:58:52.627" endtime="20230102 20:58:52.627"/>
+<msg timestamp="20230103 22:23:00.618" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230103 22:23:00.297" endtime="20230103 22:23:00.618"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230102 20:58:52.629" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20230102 20:58:52.627" endtime="20230102 20:58:52.629"/>
+<msg timestamp="20230103 22:23:00.618" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230103 22:23:00.618" endtime="20230103 22:23:00.618"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230102 20:58:52.629" endtime="20230102 20:58:52.630"/>
+<status status="PASS" starttime="20230103 22:23:00.618" endtime="20230103 22:23:00.618"/>
 </kw>
-<kw name="Get From Dictionary" library="Collections">
-<var>${contentTypeValue}</var>
-<arg>${response.headers}</arg>
-<arg>Content-Type</arg>
-<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20230102 20:58:52.631" level="INFO">${contentTypeValue} = application/json</msg>
-<status status="PASS" starttime="20230102 20:58:52.630" endtime="20230102 20:58:52.631"/>
+<kw name="Convert To String" library="BuiltIn">
+<var>${res_body}</var>
+<arg>${response.content}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230103 22:23:00.620" level="INFO">${res_body} = {"message":"add contact successfully"}</msg>
+<status status="PASS" starttime="20230103 22:23:00.619" endtime="20230103 22:23:00.620"/>
 </kw>
-<kw name="Should Be Equal" library="BuiltIn">
-<arg>${contentTypeValue}</arg>
-<arg>application/json</arg>
-<doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230102 20:58:52.631" endtime="20230102 20:58:52.631"/>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${res_body}</arg>
+<arg>add contact successfully</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230103 22:23:00.621" endtime="20230103 22:23:00.621"/>
 </kw>
-<status status="PASS" starttime="20230102 20:58:52.390" endtime="20230102 20:58:52.631"/>
-</kw>
-<tag>Check get news</tag>
-<status status="PASS" starttime="20230102 20:58:52.384" endtime="20230102 20:58:52.631"/>
+<tag>API</tag>
+<status status="PASS" starttime="20230103 22:22:52.885" endtime="20230103 22:23:00.621"/>
 </test>
-<status status="PASS" starttime="20230102 20:58:51.885" endtime="20230102 20:58:52.632"/>
+<status status="PASS" starttime="20230103 22:22:52.282" endtime="20230103 22:23:00.622"/>
 </suite>
 <statistics>
 <total>
 <stat pass="1" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">Check get news</stat>
+<stat pass="1" fail="0" skip="0">API</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Home">Home</stat>
+<stat pass="1" fail="0" skip="0" id="s1" name="Contact">Contact</stat>
 </suite>
 </statistics>
 <errors>
