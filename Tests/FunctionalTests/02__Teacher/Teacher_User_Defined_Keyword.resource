@@ -10,7 +10,7 @@ create teacher page is open
     Click Element    //span[@id='teacher_category']
     Wait Until Element Is Visible     //a[@id='create_teacher']
     Click Element    //a[@id='create_teacher']
-    Sleep    3s
+    Sleep    2s
 
 input data create teacher
     [Arguments]     ${name_teacher}     ${summary_teacher}  ${content_teacher}     ${link_image}   ${status}
@@ -22,7 +22,7 @@ input data create teacher
     Click Element     //option[contains(text(),'${status}')]
 
 click button add teacher
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='themgiaovien']
 
 show successful teacher added message
@@ -48,7 +48,7 @@ edit teacher page is open
     Wait Until Element Is Visible     //a[@id='list_teacher']
     Click Element    //a[@id='list_teacher']
     Click Element    ${locator_teacher}
-    Sleep    3s
+    Sleep    2s
 
 display error verify data
     [Arguments]     ${name_teacher}   ${summary_teacher}  ${content_teacher}     ${status}
@@ -72,7 +72,7 @@ input data edit teacher
     Click Element     //option[contains(text(),'${status}')]
 
 click button edit teacher
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='update_teacher']
 show successful teacher edited message
     Wait Until Page Contains    Cập nhật giáo viên thành công
@@ -95,7 +95,7 @@ delete teacher page is open
     Wait Until Element Is Visible     //a[@id='list_teacher']
     Click Element    //a[@id='list_teacher']
     Click Element    ${locator_teacher}
-    Sleep    3s
+    Sleep    2s
 delete teacher
    Handle Alert 	action=ACCEPT   timeout=5s
 
@@ -112,11 +112,11 @@ list teacher page is open
 search has data
     [Arguments]     ${keyword}
     Input Text    //input[@type='search']      ${keyword}
-    Sleep    3s
+    Sleep    2s
     Page Should Contain     ${keyword}
 
 search no data
     [Arguments]     ${keyword}
     Input Text    //input[@type='search']      ${keyword}
-    Sleep    3s
+    Sleep    2s
     Page Should Contain    No matching records found

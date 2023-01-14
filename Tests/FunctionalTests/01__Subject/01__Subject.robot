@@ -16,7 +16,7 @@ CREATE01-Verify Create Subject Successfull
 CREATE02-Check the subject already exists
     [Tags]      Check create subject
     Redirect create subject page
-    Sleep    3s
+    Sleep    2s
                                                 #Tên môn học      #Mô tả                    #Trạng thái
     Create subject                              Môn Toán Học      Danh mục môn toán         Kích hoạt
     Wait Until Page Contains             Tên môn học đã có.Vui lòng điền tên khác
@@ -85,15 +85,15 @@ SEARCH01-Check search find data
     [Tags]      Search
     Redirect search subject page
     Input Text    //input[@type='search']     Môn Vật Lý
-    Sleep    3s
+    Sleep    2s
     Page Should Contain     Môn Vật Lý
 
 SEARCH02-Check search not find data
     [Tags]      Search
     Redirect search subject page
     Input Text    //input[@type='search']    Môn Ngoại Ngữ
-    Sleep    3s
-   Page Should Contain    No matching records found
+    Sleep    2s
+    Page Should Contain    No matching records found
 
 
 

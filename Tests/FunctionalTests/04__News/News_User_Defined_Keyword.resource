@@ -10,7 +10,7 @@ Redirect create new page
     Click Element    //span[@id='new_category']
     Wait Until Element Is Visible     //a[@id='create_new']
     Click Element    //a[@id='create_new']
-    Sleep    3s
+    Sleep    2s
 
 Create new
     [Arguments]     ${name_new}     ${summary_new}  ${content_new}     ${link_image}   ${status}
@@ -20,7 +20,7 @@ Create new
     Choose File  //input[@name='hinhanh']   ${link_image}
     Click Element    //select[@name='kichhoat']
     Click Element     //option[contains(text(),'${status}')]
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='themtintuc']
 
 #Update
@@ -31,7 +31,7 @@ Redirect edit new page
     Wait Until Element Is Visible    //a[@id='list_new']
     Click Element    //a[@id='list_new']
     Click Element    ${locator_new}
-    Sleep    3s
+    Sleep    2s
 
 
 Verify data

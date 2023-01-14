@@ -10,9 +10,9 @@ Test Teardown   Close Website
 RG01-Register and Verify data register
      [Setup]  Open User Site Using Chrome Browser
      Click Element    //a[contains(text(),'Liên hệ')]
-     Sleep  3s
+     Sleep  2s
      Input data    Nguyễn Văn A   linh@gmail.com    0988888888    Toán
-     Sleep    3s
+     Sleep    2s
      Close Browser
      Open Admin Site Using Chrome Browser
      Redirect not contacted page
@@ -44,28 +44,28 @@ SEARCH01-Check search to find data students contacted
     [Tags]      Search
     Redirect contacted page
     Input Text    //input[@type='search']     Linh
-    Sleep    3s
+    Sleep    2s
     Page Should Contain     Linh
 
 SEARCH02-Check search not find data student contacted
     [Tags]      Search
     Redirect contacted page
     Input Text    //input[@type='search']    Nguyễn Văn C
-    Sleep    3s
+    Sleep    2s
     Page Should Contain    Showing 0 to 0 of 0 entries
 
 SEARCH03-Check search to find data students not contact
     [Tags]      Search
     Redirect not contacted page
     Input Text    //input[@type='search']     Linh
-    Sleep    3s
+    Sleep    2s
     Page Should Contain     Linh
 
 SEARCH04-Check search not find data student not contact
     [Tags]      Search
     Redirect not contacted page
     Input Text    //input[@type='search']    Nguyễn Văn C
-    Sleep    3s
+    Sleep    2s
     Page Should Contain    Showing 0 to 0 of 0 entries
 
 
