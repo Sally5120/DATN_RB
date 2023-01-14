@@ -8,4 +8,4 @@ Redirect Logout
     Click Element    //span[@id='droplist_user']
     Wait Until Element Is Visible     //a[@id='logout']
     Click Element    //a[@id='logout']
-    Sleep    3s
+    Sleep    2s

@@ -40,7 +40,7 @@ CREATE04-Check require
     Page Should Contain         Bạn phải có lịch khai giảng khóa học
     Page Should Contain         Bạn phải điền số lượng học viên
 
-#Update Course
+#Update 03__Course
 UPDATE01-Verify data course
     [Tags]      Check update Course
     Redirect edit course page    //tbody/tr[1]/td[8]/a[1]

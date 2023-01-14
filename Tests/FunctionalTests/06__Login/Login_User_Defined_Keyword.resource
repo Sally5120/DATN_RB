@@ -10,7 +10,7 @@ Verify_Login_Fail
     Click Button    ${locator_button}
     Wait Until Page Contains Element     ${expect}
     Reload Page
-    Sleep    3s
+    Sleep    2s
 
 
 

@@ -11,13 +11,13 @@ Redirect Change Password page
     Click Element    //span[@id='droplist_user']
     Wait Until Element Is Visible     //a[@id='change_password']
     Click Element    //a[@id='change_password']
-    Sleep    3s
+    Sleep    2s
 Input data
     [Arguments]     ${password_new}     ${re_enter_password}     ${password_old}
     Input Password      ${locator_password_new}     ${password_new}
     Input Password      ${locator_re_enter_password}     ${re_enter_password}
     Input Password      ${locator_password_old}     ${password_old}
-    Sleep    3s
+    Sleep    2s
     Click Button        ${locator_button_password}
 
 

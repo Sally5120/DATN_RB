@@ -10,7 +10,7 @@ Redirect create course page
     Click Element    //span[@id='course']
     Wait Until Element Is Visible    //a[@id='create_course']
     Click Element    //a[@id='create_course']
-    Sleep    3s
+    Sleep    2s
 
 Create course
     [Arguments]     ${name_course}     ${summary_course}    ${content_course}   ${number_of_students}    ${link_image}   ${subject}   ${teacher}          ${opening_schedule}  ${status}
@@ -27,7 +27,7 @@ Create course
     Input Text   //input[@name='lichkhaigiang']    ${opening_schedule}
     Click Element    //select[@name='kichhoat']
     Click Element     //option[contains(text(),'${status}')]
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='themkhoahoc']
 
 #Update
@@ -38,7 +38,7 @@ Redirect edit course page
     Wait Until Element Is Visible    //a[@id='list_course']
     Click Element    //a[@id='list_course']
     Click Element    ${locator_course}
-    Sleep    3s
+    Sleep    2s
 
 Verify data
     [Arguments]     ${name_course}     ${summary_course}    ${content_course}   ${number_of_students}     ${subject}   ${teacher}          ${opening_schedule}  ${status}
@@ -72,7 +72,7 @@ Update course
     Input Text   //input[@name='lichkhaigiang']    ${opening_schedule}
     Click Element    //select[@name='kichhoat']
     Click Element     //option[contains(text(),'${status}')]
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='suakhoahoc']
 
 

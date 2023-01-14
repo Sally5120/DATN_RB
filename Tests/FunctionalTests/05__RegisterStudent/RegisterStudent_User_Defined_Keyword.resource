@@ -25,14 +25,14 @@ Redirect contacted page
     Click Element    //span[@id='register_student']
     Wait Until Element Is Visible    //a[@id='not_contacted']
     Click Element    //a[@id='not_contacted']
-    Sleep    3s
+    Sleep    2s
 
 Redirect not contacted page
     Verify_Login_Successfully
     Click Element    //span[@id='register_student']
     Wait Until Element Is Visible    //a[@id='contacted']
     Click Element    //a[@id='contacted']
-    Sleep    3s
+    Sleep    2s
 
 Delete register
     Handle Alert 	action=ACCEPT   timeout=5s

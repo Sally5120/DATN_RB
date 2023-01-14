@@ -10,7 +10,7 @@ Redirect create subject page
     Click Element    //span[@id='subject_category']
     Wait Until Element Is Visible     //a[@id='create_subject']
     Click Element    //a[@id='create_subject']
-    Sleep    3s
+    Sleep    2s
 
 Create subject
     [Arguments]     ${name_subject}     ${summary_subject}    ${status}
@@ -18,7 +18,7 @@ Create subject
     Input Text    //textarea[@name='mota']    ${summary_subject}
     Click Element    //select[@name='kichhoat']
     Click Element     //option[contains(text(),'${status}')]
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='themmonhoc']
 
 #Update
@@ -29,7 +29,7 @@ Redirect edit subject page
     Wait Until Element Is Visible    //a[@id='list_subject']
     Click Element    //a[@id='list_subject']
     Click Element    ${locator_subject}
-    Sleep    3s
+    Sleep    2s
 
 
 Verify data
@@ -47,7 +47,7 @@ Update subject
     Input Text    //textarea[@name='mota']    ${summary_subject}
     Click Element    //select[@name='kichhoat']
     Click Element     //option[contains(text(),'${status}')]
-    Sleep    3s
+    Sleep    2s
     Click Button    //button[@name='suamonhoc']
 
 Check require
@@ -60,7 +60,7 @@ Redirect delete subject page
     [Arguments]     ${locator_subject}
     Verify_Login_Successfully
     Click Element    //span[@id='subject_category']
-    Sleep    3s
+    Sleep    2s
     Click Element    //a[@id='list_subject']
     Click Button     ${locator_subject}
 
