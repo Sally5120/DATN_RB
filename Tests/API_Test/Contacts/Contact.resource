@@ -4,12 +4,12 @@ Resource    ../../../Commons/Common.resource
 
 *** Keywords ***
 create_new_session
-    Open Browser    ${url_local_page}    headlesschrome
+    Open Browser    ${url_production_page}    headlesschrome
     Click Element    //a[contains(text(),'Liên hệ')]
     ${cookie_value}=     Get Cookie  XSRF-TOKEN
     Close Browser
     ${header}=  Create Dictionary   Content-Type=application/json       X-XSRF-TOKEN=${cookie_value.value}
-    Create Session    myssion    ${base_url}    headers=${header}
+    Create Session    myssion    ${base_production_url}    headers=${header}
 
 
 

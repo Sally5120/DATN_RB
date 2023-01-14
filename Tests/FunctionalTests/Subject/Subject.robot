@@ -1,8 +1,8 @@
 
 *** Settings ***
 Resource   Subject_User_Defined_Keyword.resource
-Test Setup  Start Testcase
-Test Teardown   Finish Testcase
+Test Setup  Open Admin Site Using Chrome Browser
+Test Teardown   Close Website
 *** Variables ***
 *** Test Cases ***
 #Create subject
@@ -16,6 +16,7 @@ CREATE01-Verify Create Subject Successfull
 CREATE02-Check the subject already exists
     [Tags]      Check create subject
     Redirect create subject page
+    Sleep    3s
                                                 #Tên môn học      #Mô tả                    #Trạng thái
     Create subject                              Môn Toán Học      Danh mục môn toán         Kích hoạt
     Wait Until Page Contains             Tên môn học đã có.Vui lòng điền tên khác
@@ -80,8 +81,6 @@ DELETE-Check delete subject successfully
 
 
 #Search
-
-
 SEARCH01-Check search find data
     [Tags]      Search
     Redirect search subject page

@@ -1,14 +1,14 @@
-
-
-
 *** Variables ***
-#URL
-${url_production_admin}       http://qlttltcl.atwebpages.com/admin
-${url_local_admin}        http://localhost/Project/tschool/admin
-${url_local_page}        http://localhost/Project/tschool
-${url_production_page}       http://qlttltcl.atwebpages.com
-${base_url}     http://localhost/Project/tschool/api
-${base_production_url}     http://qlttltcl.atwebpages.com/api
+#URL local
+
+${url_dev_admin}        http://localhost/Project/tschool/admin
+${url_dev_page}        http://localhost/Project/tschool
+${base_dev_url}     http://localhost/Project/tschool/api
+
+#URL dev
+${url_production_admin}       https://datncl.top/admin
+${url_production_page}       https://datncl.top/
+${base_production_url}  https://datncl.top/api
 
 #Browser
 ${browser}    Chrome

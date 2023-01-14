@@ -2,17 +2,18 @@
 Resource    Common.resource
 
 *** Keywords ***
-Start Testcase
-    Open Browser    ${url_local_admin}   ${browser}
+Open Admin Site Using Chrome Browser
+     Open Browser    ${url_dev_admin}    ${browser}
 #    Open Browser    ${url_production_admin}   ${browser}
+
     Maximize Browser Window
 
-Start Testcase Page
-    Open Browser    ${url_local_page}  ${browser}
+Open User Site Using Chrome Browser
+    Open Browser    ${url_dev_page}   ${browser}
 #    Open Browser    ${url_production_page}   ${browser}
     Maximize Browser Window
 
-Finish TestCase
+Close Website
     Close Browser
 
 Verify_Login_Successfully
