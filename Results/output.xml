@@ -1,177 +1,487 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.12 on win32)" generated="20230103 22:09:53.650" rpa="false" schemaversion="2">
-<suite id="s1" name="Contact" source="C:\Users\nguye\PycharmProjects\DATN_RF\Tests\API_Test\Contacts\Contact.robot">
-<test id="s1-t1" name="TC01_Contact_Successfully">
-<kw name="create_new_session" library="Contact" type="SETUP">
-<msg timestamp="20230103 22:09:54.149" level="TRACE">Arguments: [  ]</msg>
-<kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url_local_page}</arg>
-<arg>headlesschrome</arg>
-<doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230103 22:09:54.150" level="TRACE">Arguments: [ 'http://localhost/Project/tschool' | 'headlesschrome' ]</msg>
-<msg timestamp="20230103 22:09:54.150" level="INFO">Opening browser 'headlesschrome' to base url 'http://localhost/Project/tschool'.</msg>
-<msg timestamp="20230103 22:09:54.684" level="DEBUG">POST http://localhost:55154/session {"capabilities": {"firstMatch": [{}], "alwaysMatch": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless"]}}}, "desiredCapabilities": {"browserName": "chrome", "pageLoadStrategy": "normal", "goog:chromeOptions": {"extensions": [], "args": ["--headless"]}}}</msg>
-<msg timestamp="20230103 22:09:54.686" level="DEBUG">Starting new HTTP connection (1): localhost:55154</msg>
-<msg timestamp="20230103 22:09:55.313" level="DEBUG">http://localhost:55154 "POST /session HTTP/1.1" 200 792</msg>
-<msg timestamp="20230103 22:09:55.314" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:55.314" level="DEBUG">POST http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a/timeouts {"script": 5000}</msg>
-<msg timestamp="20230103 22:09:55.316" level="DEBUG">http://localhost:55154 "POST /session/b562d884673e70a7430fad29d7b6f29a/timeouts HTTP/1.1" 200 14</msg>
-<msg timestamp="20230103 22:09:55.317" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:55.317" level="DEBUG">POST http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a/timeouts {"implicit": 0}</msg>
-<msg timestamp="20230103 22:09:55.320" level="DEBUG">http://localhost:55154 "POST /session/b562d884673e70a7430fad29d7b6f29a/timeouts HTTP/1.1" 200 14</msg>
-<msg timestamp="20230103 22:09:55.320" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:55.320" level="DEBUG">POST http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a/url {"url": "http://localhost/Project/tschool"}</msg>
-<msg timestamp="20230103 22:09:56.776" level="DEBUG">http://localhost:55154 "POST /session/b562d884673e70a7430fad29d7b6f29a/url HTTP/1.1" 200 14</msg>
-<msg timestamp="20230103 22:09:56.776" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:56.776" level="DEBUG">Opened browser with session id b562d884673e70a7430fad29d7b6f29a.</msg>
-<msg timestamp="20230103 22:09:56.776" level="TRACE">Return: 1</msg>
-<status status="PASS" starttime="20230103 22:09:54.149" endtime="20230103 22:09:56.776"/>
-</kw>
-<kw name="Click Element" library="SeleniumLibrary">
-<arg>//a[contains(text(),'Liên hệ')]</arg>
-<doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230103 22:09:56.777" level="TRACE">Arguments: [ "//a[contains(text(),'Liên hệ')]" ]</msg>
-<msg timestamp="20230103 22:09:56.780" level="INFO">Clicking element '//a[contains(text(),'Liên hệ')]'.</msg>
-<msg timestamp="20230103 22:09:56.782" level="DEBUG">POST http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a/elements {"using": "xpath", "value": "//a[contains(text(),'Li\u00ean h\u1ec7')]"}</msg>
-<msg timestamp="20230103 22:09:56.798" level="DEBUG">http://localhost:55154 "POST /session/b562d884673e70a7430fad29d7b6f29a/elements HTTP/1.1" 200 90</msg>
-<msg timestamp="20230103 22:09:56.798" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:56.798" level="DEBUG">POST http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a/element/76a23821-e1d1-4cc7-9892-113ef4b67760/click {"id": "76a23821-e1d1-4cc7-9892-113ef4b67760"}</msg>
-<msg timestamp="20230103 22:09:57.112" level="DEBUG">http://localhost:55154 "POST /session/b562d884673e70a7430fad29d7b6f29a/element/76a23821-e1d1-4cc7-9892-113ef4b67760/click HTTP/1.1" 200 14</msg>
-<msg timestamp="20230103 22:09:57.112" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:57.112" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20230103 22:09:56.777" endtime="20230103 22:09:57.112"/>
-</kw>
-<kw name="Get Cookie" library="SeleniumLibrary">
-<var>${cookie_value}</var>
-<arg>XSRF-TOKEN</arg>
-<doc>Returns information of cookie with ``name`` as an object.</doc>
-<msg timestamp="20230103 22:09:57.113" level="TRACE">Arguments: [ 'XSRF-TOKEN' ]</msg>
-<msg timestamp="20230103 22:09:57.113" level="DEBUG">GET http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a/cookie/XSRF-TOKEN {"name": "XSRF-TOKEN"}</msg>
-<msg timestamp="20230103 22:09:57.189" level="DEBUG">http://localhost:55154 "GET /session/b562d884673e70a7430fad29d7b6f29a/cookie/XSRF-TOKEN HTTP/1.1" 200 485</msg>
-<msg timestamp="20230103 22:09:57.190" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:57.190" level="TRACE">Return: &lt;SeleniumLibrary.keywords.cookie.CookieInformation object at 0x000001AB69528880&gt;</msg>
-<msg timestamp="20230103 22:09:57.190" level="INFO">${cookie_value} = name=XSRF-TOKEN
-value=eyJpdiI6Ikh5WnFhZUlrTnlzMCs2Ry9wbU5MRFE9PSIsInZhbHVlIjoiRjZla01BSHVudEtDR3lOSmFhTlBPYVdqQ0Z6RVJBMHppdzlXcUpzVmZRNTJMVU1NbGpRYTloaW1PSkRJSHB3UXNrZW1zR1FPTDIxdTRPc2lqYklOTjJaOFNkd3...</msg>
-<status status="PASS" starttime="20230103 22:09:57.112" endtime="20230103 22:09:57.190"/>
-</kw>
-<kw name="Close Browser" library="SeleniumLibrary">
-<doc>Closes the current browser.</doc>
-<msg timestamp="20230103 22:09:57.190" level="TRACE">Arguments: [  ]</msg>
-<msg timestamp="20230103 22:09:57.190" level="DEBUG">Closing browser with session id b562d884673e70a7430fad29d7b6f29a.</msg>
-<msg timestamp="20230103 22:09:57.190" level="DEBUG">DELETE http://localhost:55154/session/b562d884673e70a7430fad29d7b6f29a {}</msg>
-<msg timestamp="20230103 22:09:57.202" level="DEBUG">http://localhost:55154 "DELETE /session/b562d884673e70a7430fad29d7b6f29a HTTP/1.1" 200 14</msg>
-<msg timestamp="20230103 22:09:57.203" level="DEBUG">Finished Request</msg>
-<msg timestamp="20230103 22:09:59.237" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20230103 22:09:57.190" endtime="20230103 22:09:59.237"/>
-</kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${header}</var>
-<arg>Content-Type=application/json</arg>
-<arg>X-XSRF-TOKEN=${cookie_value.value}</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230103 22:09:59.237" level="TRACE">Arguments: [ 'Content-Type=application/json' | 'X-XSRF-TOKEN=${cookie_value.value}' ]</msg>
-<msg timestamp="20230103 22:09:59.238" level="TRACE">Return: {'Content-Type': 'application/json',
- 'X-XSRF-TOKEN': 'eyJpdiI6Ikh5WnFhZUlrTnlzMCs2Ry9wbU5MRFE9PSIsInZhbHVlIjoiRjZla01BSHVudEtDR3lOSmFhTlBPYVdqQ0Z6RVJBMHppdzlXcUpzVmZRNTJMVU1NbGpRYTloaW1PSkRJSHB3UXNrZW1zR1FPTDIxdTRPc2lqYklOTjJaOFNkd3RvZ2pJQis3L2RNbFdpRzNrUXZrcEFYNjZEZk9wdnhCNGdET2UiLCJtYWMiOiJhZTEyNDUyMjU2OTk3NjI2YmFjMTM0NjUxZGE2OWZlZjZkOGJkNjFmOGQ3NGRjNDZiZmJiZTU1NmQwMjQwOGMyIiwidGFnIjoiIn0%3D'}</msg>
-<msg timestamp="20230103 22:09:59.239" level="INFO">${header} = {'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6Ikh5WnFhZUlrTnlzMCs2Ry9wbU5MRFE9PSIsInZhbHVlIjoiRjZla01BSHVudEtDR3lOSmFhTlBPYVdqQ0Z6RVJBMHppdzlXcUpzVmZRNTJMVU1NbGpRYTloaW1PSkRJSHB3UXNrZW...</msg>
-<status status="PASS" starttime="20230103 22:09:59.237" endtime="20230103 22:09:59.239"/>
-</kw>
+<robot generator="Robot 4.1.2 (Python 3.9.12 on win32)" generated="20230114 20:38:18.675" rpa="false" schemaversion="2">
+<suite id="s1" name="Home" source="C:\Users\nguye\PycharmProjects\DATN_RF\Tests\API_Test\Home\Home.robot">
+<test id="s1-t1" name="TC01_Check_get_course">
+<kw name="create_new_session" library="Home" type="SETUP">
 <kw name="Create Session" library="RequestsLibrary">
 <arg>myssion</arg>
-<arg>${base_url}</arg>
-<arg>headers=${header}</arg>
+<arg>${base_production_url}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230103 22:09:59.239" level="TRACE">Arguments: [ 'myssion' | 'http://localhost/Project/tschool/api' | headers={'Content-Type': 'application/json',
- 'X-XSRF-TOKEN': 'eyJpdiI6Ikh5WnFhZUlrTnlzMCs2Ry9wbU5MRFE9PSIsInZhbHVlIjoiRjZla01BSHVudEtDR3lOSmFhTlBPYVdqQ0Z6RVJBMHppdzlXcUpzVmZRNTJMVU1NbGpRYTloaW1PSkRJSHB3UXNrZW1zR1FPTDIxdTRPc2lqYklOTjJaOFNkd3RvZ2pJQis3L2RNbFdpRzNrUXZrcEFYNjZEZk9wdnhCNGdET2UiLCJtYWMiOiJhZTEyNDUyMjU2OTk3NjI2YmFjMTM0NjUxZGE2OWZlZjZkOGJkNjFmOGQ3NGRjNDZiZmJiZTU1NmQwMjQwOGMyIiwidGFnIjoiIn0%3D'} ]</msg>
-<msg timestamp="20230103 22:09:59.240" level="INFO">Creating Session using : alias=myssion, url=http://localhost/Project/tschool/api, headers={'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6Ikh5WnFhZUlrTnlzMCs2Ry9wbU5MRFE9PSIsInZhbHVlIjoiRjZla01BSHVudEtDR3lOSmFhTlBPYVdqQ0Z6RVJBMHppdzlXcUpzVmZRNTJMVU1NbGpRYTloaW1PSkRJSHB3UXNrZW1zR1FPTDIxdTRPc2lqYklOTjJaOFNkd3RvZ2pJQis3L2RNbFdpRzNrUXZrcEFYNjZEZk9wdnhCNGdET2UiLCJtYWMiOiJhZTEyNDUyMjU2OTk3NjI2YmFjMTM0NjUxZGE2OWZlZjZkOGJkNjFmOGQ3NGRjNDZiZmJiZTU1NmQwMjQwOGMyIiwidGFnIjoiIn0%3D'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<msg timestamp="20230103 22:09:59.240" level="DEBUG">Creating session: myssion</msg>
-<msg timestamp="20230103 22:09:59.241" level="TRACE">Return: &lt;requests.sessions.Session object at 0x000001AB69528DC0&gt;</msg>
-<status status="PASS" starttime="20230103 22:09:59.239" endtime="20230103 22:09:59.241"/>
+<msg timestamp="20230114 20:38:19.104" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:38:19.104" endtime="20230114 20:38:19.104"/>
 </kw>
-<msg timestamp="20230103 22:09:59.241" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20230103 22:09:54.149" endtime="20230103 22:09:59.242"/>
+<status status="PASS" starttime="20230114 20:38:19.103" endtime="20230114 20:38:19.104"/>
 </kw>
-<kw name="Create Dictionary" library="BuiltIn">
-<var>${body}</var>
-<arg>hoten=</arg>
-<arg>email=test@gmail.com</arg>
-<arg>sodienthoai=8528888820</arg>
-<arg>khoahocquantam=test</arg>
-<doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230103 22:09:59.242" level="TRACE">Arguments: [ 'hoten=' | 'email=test@gmail.com' | 'sodienthoai=8528888820' | 'khoahocquantam=test' ]</msg>
-<msg timestamp="20230103 22:09:59.242" level="TRACE">Return: {'email': 'test@gmail.com',
- 'hoten': '',
- 'khoahocquantam': 'test',
- 'sodienthoai': '8528888820'}</msg>
-<msg timestamp="20230103 22:09:59.242" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
-<status status="PASS" starttime="20230103 22:09:59.242" endtime="20230103 22:09:59.242"/>
-</kw>
-<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<kw name="check_get_course" library="Home">
+<arg>course[0]</arg>
+<arg>'tieude': 'Luyện Thi Vật Lý 10'</arg>
+<kw name="GET On Session" library="RequestsLibrary">
 <var>${response}</var>
-<arg>HTTPError: 400*</arg>
-<arg>POST On Session</arg>
 <arg>myssion</arg>
-<arg>/contact</arg>
-<arg>json=${body}</arg>
-<doc>Runs the keyword and checks that the expected error occurred.</doc>
-<msg timestamp="20230103 22:09:59.243" level="TRACE">Arguments: [ 'HTTPError: 400*' | 'POST On Session' | 'myssion' | '/contact' | 'json=${body}' ]</msg>
-<kw name="POST On Session" library="RequestsLibrary">
-<arg>myssion</arg>
-<arg>/contact</arg>
-<arg>json=${body}</arg>
-<doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20230103 22:09:59.243" level="TRACE">Arguments: [ 'myssion' | '/contact' | json={'email': 'test@gmail.com',
- 'hoten': '',
- 'khoahocquantam': 'test',
- 'sodienthoai': '8528888820'} ]</msg>
-<msg timestamp="20230103 22:09:59.249" level="DEBUG">Starting new HTTP connection (1): localhost:80</msg>
-<msg timestamp="20230103 22:09:59.604" level="DEBUG">http://localhost:80 "POST /Project/tschool/api/contact HTTP/1.1" 400 None</msg>
-<msg timestamp="20230103 22:09:59.606" level="INFO">POST Request : url=http://localhost/Project/tschool/api/contact 
- path_url=/Project/tschool/api/contact 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6Ikh5WnFhZUlrTnlzMCs2Ry9wbU5MRFE9PSIsInZhbHVlIjoiRjZla01BSHVudEtDR3lOSmFhTlBPYVdqQ0Z6RVJBMHppdzlXcUpzVmZRNTJMVU1NbGpRYTloaW1PSkRJSHB3UXNrZW1zR1FPTDIxdTRPc2lqYklOTjJaOFNkd3RvZ2pJQis3L2RNbFdpRzNrUXZrcEFYNjZEZk9wdnhCNGdET2UiLCJtYWMiOiJhZTEyNDUyMjU2OTk3NjI2YmFjMTM0NjUxZGE2OWZlZjZkOGJkNjFmOGQ3NGRjNDZiZmJiZTU1NmQwMjQwOGMyIiwidGFnIjoiIn0%3D', 'Content-Length': '95'} 
- body=b'{"hoten": "", "email": "test@gmail.com", "sodienthoai": "8528888820", "khoahocquantam": "test"}' 
+<arg>/course</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:38:19.547" level="INFO">GET Request : url=https://datncl.top/api/course 
+ path_url=/api/course 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
  </msg>
-<msg timestamp="20230103 22:09:59.606" level="INFO">POST Response : url=http://localhost/Project/tschool/api/contact 
- status=400, reason=Bad Request 
- headers={'Date': 'Tue, 03 Jan 2023 15:09:59 GMT', 'Server': 'Apache/2.4.51 (Win64) OpenSSL/1.1.1l PHP/7.4.26', 'X-Powered-By': 'PHP/7.4.26', 'Cache-Control': 'no-cache, private', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'Access-Control-Allow-Origin': '*', 'Connection': 'close', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json'} 
- body={"hoten":["The hoten field is required."]} 
+<msg timestamp="20230114 20:38:19.547" level="INFO">GET Response : url=https://datncl.top/api/course 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '59', 'content-length': '1478', 'date': 'Sat, 14 Jan 2023 13:38:18 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"course":[{"id":26,"id_monhoc":8,"id_giaovien":22,"tieude":"Luy\u1ec7n Thi V\u1eadt L\u00fd 10","slug_post":"luyen-thi-vat-ly-10","tomtat":"Luy\u1ec7n Thi V\u1eadt L\u00fd 10","noidung":"Luy\u1ec7n Thi V\u1eadt L\u00fd 10","Soluonghocvien":15,"hinhanh":"vatly1045.png","lichkhaigiang":"2022-10-28","views":3,"kichhoat":0,"created_at":"2022-10-27 19:59:05","updated_at":"2023-01-14 20:20:24"},{"id":25,"id_monhoc":22,"id_giaovien":22,"tieude":"Luy\u1ec7n thi H\u00f3a 12","slug_post":"luyen-thi-hoa-12","tomtat":"Luy\u1ec7n thi H\u00f3a 12","noidung":"Luy\u1ec7n thi H\u00f3a 12","Soluonghocvien":15,"hinhanh":"hoa1265.png","lichkhaigiang":"2022-10-30","views":null,"kichhoat":0,"created_at":"2022-10-27 19:52:08","updated_at":"2022-10-27 20:43:28"},{"id":24,"id_monhoc":22,"id_giaovien":22,"tieude":"Luy\u1ec7n thi H\u00f3a 11","slug_post":"luyen-thi-hoa-11","tomtat":"Luy\u1ec7n thi H\u00f3a 11","noidung":"Luy\u1ec7n thi H\u00f3a 11","Soluonghocvien":15,"hinhanh":"hoa1175.png","lichkhaigiang":"2022-10-30","views":null,"kichhoat":0,"created_at":"2022-10-27 19:51:36","updated_at":"2022-10-27 20:43:39"},{"id":19,"id_monhoc":8,"id_giaovien":22,"tieude":"Luy\u1ec7n thi v\u1eadt l\u00fd","slug_post":"luyen-thi-vat-ly","tomtat":"Luy\u1ec7n thi v\u1eadt l\u00fd","noidung":"Luy\u1ec7n thi v\u1eadt l\u00fd","Soluonghocvien":15,"hinhanh":"vatly1238.png","lichkhaigiang":"2022-10-08","views":1,"kichhoat":0,"created_at":"2022-10-08 22:06:12","updated_at":"2022-10-27 20:43:52"}]} 
  </msg>
-<msg timestamp="20230103 22:09:59.615" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: http://localhost/Project/tschool/api/contact</msg>
-<msg timestamp="20230103 22:09:59.615" level="DEBUG">Traceback (most recent call last):
-  File "C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\RequestsLibrary\utils.py", line 154, in decorator
-    return func(*args, **kwargs)
-  File "C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\RequestsLibrary\RequestsOnSessionKeywords.py", line 62, in post_on_session
-    self._check_status(expected_status, response, msg)
-  File "C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\RequestsLibrary\SessionKeywords.py", line 570, in _check_status
-    resp.raise_for_status()
-  File "C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\requests\models.py", line 953, in raise_for_status
-    raise HTTPError(http_error_msg, response=self)</msg>
-<status status="FAIL" starttime="20230103 22:09:59.243" endtime="20230103 22:09:59.615"/>
+<msg timestamp="20230114 20:38:19.547" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:38:19.548" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230114 20:38:19.105" endtime="20230114 20:38:19.548"/>
 </kw>
-<msg timestamp="20230103 22:09:59.616" level="TRACE">Return: 'HTTPError: 400 Client Error: Bad Request for url: http://localhost/Project/tschool/api/contact'</msg>
-<msg timestamp="20230103 22:09:59.616" level="INFO">${response} = HTTPError: 400 Client Error: Bad Request for url: http://localhost/Project/tschool/api/contact</msg>
-<status status="PASS" starttime="20230103 22:09:59.243" endtime="20230103 22:09:59.616"/>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230114 20:38:19.550" level="INFO">${json_object} = {'course': [{'id': 26, 'id_monhoc': 8, 'id_giaovien': 22, 'tieude': 'Luyện Thi Vật Lý 10', 'slug_post': 'luyen-thi-vat-ly-10', 'tomtat': 'Luyện Thi Vật Lý 10', 'noidung': 'Luyện Thi Vật Lý 10', 'Soluo...</msg>
+<status status="PASS" starttime="20230114 20:38:19.548" endtime="20230114 20:38:19.550"/>
 </kw>
-<kw name="Status Should Be" library="RequestsLibrary">
-<arg>expected_status=400</arg>
-<doc>Fails if response status code is different than the expected.</doc>
-<msg timestamp="20230103 22:09:59.617" level="TRACE">Arguments: [ expected_status='400' ]</msg>
-<msg timestamp="20230103 22:09:59.617" level="TRACE">Return: None</msg>
-<status status="PASS" starttime="20230103 22:09:59.617" endtime="20230103 22:09:59.617"/>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${khoahoc}</var>
+<arg>${json_object}</arg>
+<arg>$.${data}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230114 20:38:19.636" level="INFO">${khoahoc} = [{'id': 26, 'id_monhoc': 8, 'id_giaovien': 22, 'tieude': 'Luyện Thi Vật Lý 10', 'slug_post': 'luyen-thi-vat-ly-10', 'tomtat': 'Luyện Thi Vật Lý 10', 'noidung': 'Luyện Thi Vật Lý 10', 'Soluonghocvien':...</msg>
+<status status="PASS" starttime="20230114 20:38:19.551" endtime="20230114 20:38:19.637"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${result}</var>
+<arg>${khoahoc[0]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:19.640" level="INFO">${result} = {'id': 26, 'id_monhoc': 8, 'id_giaovien': 22, 'tieude': 'Luyện Thi Vật Lý 10', 'slug_post': 'luyen-thi-vat-ly-10', 'tomtat': 'Luyện Thi Vật Lý 10', 'noidung': 'Luyện Thi Vật Lý 10', 'Soluonghocvien': ...</msg>
+<status status="PASS" starttime="20230114 20:38:19.638" endtime="20230114 20:38:19.640"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${result_d}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230114 20:38:19.641" endtime="20230114 20:38:19.641"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:19.643" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230114 20:38:19.642" endtime="20230114 20:38:19.643"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:19.644" endtime="20230114 20:38:19.644"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230114 20:38:19.651" level="INFO">${contentTypeValue} = application/json</msg>
+<status status="PASS" starttime="20230114 20:38:19.644" endtime="20230114 20:38:19.651"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${contentTypeValue}</arg>
+<arg>application/json</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:19.653" endtime="20230114 20:38:19.654"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:19.104" endtime="20230114 20:38:19.654"/>
 </kw>
 <tag>API</tag>
-<status status="PASS" starttime="20230103 22:09:54.148" endtime="20230103 22:09:59.618"/>
+<status status="PASS" starttime="20230114 20:38:19.103" endtime="20230114 20:38:19.654"/>
 </test>
-<status status="PASS" starttime="20230103 22:09:53.652" endtime="20230103 22:09:59.618"/>
+<test id="s1-t2" name="TC02_Check_get_teacher">
+<kw name="create_new_session" library="Home" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_production_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230114 20:38:19.658" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:38:19.658" endtime="20230114 20:38:19.659"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:19.657" endtime="20230114 20:38:19.659"/>
+</kw>
+<kw name="check_get_teacher" library="Home">
+<arg>teacher[0]</arg>
+<arg>'tengiaovien': 'Nguyễn Thị P'</arg>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/teacher</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:38:19.792" level="INFO">GET Request : url=https://datncl.top/api/teacher 
+ path_url=/api/teacher 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230114 20:38:19.792" level="INFO">GET Response : url=https://datncl.top/api/teacher 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '58', 'content-length': '1409', 'date': 'Sat, 14 Jan 2023 13:38:19 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"teacher":[{"id":34,"slug_giaovien":"nguyen-thi-p","tengiaovien":"Nguy\u1ec5n Th\u1ecb P","tomtat":"Gi\u00e1o vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","thongtin":"Gi\u00e1o vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","hinhanh":"pngtree-user-cartoon-girl-avatar-png-image_449290359.jpg","kichhoat":"0","created_at":"2022-10-27 19:56:52","updated_at":"2023-01-14 20:22:31"},{"id":33,"slug_giaovien":"nguyen-thi-k","tengiaovien":"Nguy\u1ec5n Th\u1ecb K","tomtat":"Gi\u1ea3ng vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","thongtin":"Gi\u1ea3ng vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","hinhanh":"pngtree-user-cartoon-girl-avatar-png-image_449290345.jpg","kichhoat":"0","created_at":"2022-10-27 19:54:16","updated_at":"2023-01-14 20:22:43"},{"id":22,"slug_giaovien":"nguyen-van-t","tengiaovien":"Nguy\u1ec5n V\u0103n T","tomtat":"Gi\u1ea3ng vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","thongtin":"Gi\u1ea3ng vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","hinhanh":"pngtree-hand-drawn-flat-wind-user-avatar-icon-png-image_449203964.jpg","kichhoat":"0","created_at":"2022-10-08 21:20:18","updated_at":"2023-01-14 20:22:57"},{"id":13,"slug_giaovien":"nguyen-van-c","tengiaovien":"Nguy\u1ec5n V\u0103n C","tomtat":"Gi\u1ea3ng vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","thongtin":"Gi\u1ea3ng vi\u00ean 10 n\u0103m kinh nghi\u1ec7m","hinhanh":"boy50.jpg","kichhoat":"0","created_at":"2021-06-12 21:52:24","updated_at":"2023-01-14 20:23:24"}]} 
+ </msg>
+<msg timestamp="20230114 20:38:19.792" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:38:19.793" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230114 20:38:19.660" endtime="20230114 20:38:19.793"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230114 20:38:19.798" level="INFO">${json_object} = {'teacher': [{'id': 34, 'slug_giaovien': 'nguyen-thi-p', 'tengiaovien': 'Nguyễn Thị P', 'tomtat': 'Giáo viên 10 năm kinh nghiệm', 'thongtin': 'Giáo viên 10 năm kinh nghiệm', 'hinhanh': 'pngtree-user-c...</msg>
+<status status="PASS" starttime="20230114 20:38:19.794" endtime="20230114 20:38:19.798"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${teacher}</var>
+<arg>${json_object}</arg>
+<arg>$.${data}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230114 20:38:19.839" level="INFO">${teacher} = [{'id': 34, 'slug_giaovien': 'nguyen-thi-p', 'tengiaovien': 'Nguyễn Thị P', 'tomtat': 'Giáo viên 10 năm kinh nghiệm', 'thongtin': 'Giáo viên 10 năm kinh nghiệm', 'hinhanh': 'pngtree-user-cartoon-girl-...</msg>
+<status status="PASS" starttime="20230114 20:38:19.799" endtime="20230114 20:38:19.839"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${result}</var>
+<arg>${teacher[0]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:19.842" level="INFO">${result} = {'id': 34, 'slug_giaovien': 'nguyen-thi-p', 'tengiaovien': 'Nguyễn Thị P', 'tomtat': 'Giáo viên 10 năm kinh nghiệm', 'thongtin': 'Giáo viên 10 năm kinh nghiệm', 'hinhanh': 'pngtree-user-cartoon-girl-a...</msg>
+<status status="PASS" starttime="20230114 20:38:19.840" endtime="20230114 20:38:19.842"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${result_d}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230114 20:38:19.842" endtime="20230114 20:38:19.844"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:19.847" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230114 20:38:19.845" endtime="20230114 20:38:19.847"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:19.847" endtime="20230114 20:38:19.848"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230114 20:38:19.852" level="INFO">${contentTypeValue} = application/json</msg>
+<status status="PASS" starttime="20230114 20:38:19.848" endtime="20230114 20:38:19.852"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${contentTypeValue}</arg>
+<arg>application/json</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:19.854" endtime="20230114 20:38:19.854"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:19.660" endtime="20230114 20:38:19.855"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20230114 20:38:19.655" endtime="20230114 20:38:19.855"/>
+</test>
+<test id="s1-t3" name="TC03_Check_get_news">
+<kw name="create_new_session" library="Home" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_production_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230114 20:38:19.859" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:38:19.858" endtime="20230114 20:38:19.859"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:19.857" endtime="20230114 20:38:19.859"/>
+</kw>
+<kw name="check_get_news" library="Home">
+<arg>news[0]</arg>
+<arg>Tin tức mới nhất về kỳ thi THPT quốc gia</arg>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/news</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:38:20.038" level="INFO">GET Request : url=https://datncl.top/api/news 
+ path_url=/api/news 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230114 20:38:20.039" level="INFO">GET Response : url=https://datncl.top/api/news 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '57', 'content-length': '19909', 'date': 'Sat, 14 Jan 2023 13:38:19 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"news":[{"id":8,"tieude":"Tin t\u1ee9c m\u1edbi nh\u1ea5t v\u1ec1 k\u1ef3 thi THPT qu\u1ed1c gia","slug_tintuc":"tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia","tomtat":"&lt;p&gt;C&amp;ocirc;ng v\u0103n 1986\/BGD\u0110T-CNTT c\u1ee7a B\u1ed9 Gi&amp;aacute;o d\u1ee5c v&amp;agrave; \u0110&amp;agrave;o t\u1ea1o \u0111&amp;atilde; c\u00f4ng b\u1ed1 danh s&amp;aacute;ch m\u1ed9t s\u1ed1 m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i \u0111\u01b0\u1ee3c mang v&amp;agrave;o trong ph&amp;ograve;ng thi trong K\u1ef3 thi t\u1ed1t nghi\u1ec7p trung h\u1ecdc ph\u1ed5 th&amp;ocirc;ng (THPT) n\u0103m 2021.&lt;\/p&gt;","noidung":"&lt;p&gt;&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;img alt=\"Danh s\u00e1ch m\u00e1y t\u00ednh \u0111\u01b0\u1ee3c mang v\u00e0o ph\u00f2ng thi t\u1ed1t nghi\u1ec7p THPT 2021\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/153629-de-thi-dap-an-thpt-quoc-gia-2018-baogiaothong-10.jpg\" width=\"650\" \/&gt;&lt;\/p&gt;\r\n\r\n&lt;h3&gt;&amp;nbsp;&lt;\/h3&gt;\r\n\r\n&lt;p&gt;&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p style=\"text-align:center\"&gt;&lt;strong&gt;M\u1ee4C L\u1ee4C&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Danh s&amp;aacute;ch m\u1ed9t s\u1ed1 m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i th&amp;ocirc;ng d\u1ee5ng \u0111\u01b0\u1ee3c ph&amp;eacute;p mang v&amp;agrave;o ph&amp;ograve;ng thi trong k\u1ef3 thi t\u1ed1t nghi\u1ec7p trung h\u1ecdc ph\u1ed5 th&amp;ocirc;ng n\u0103m 2021 l&amp;agrave;:&lt;\/p&gt;\r\n\r\n&lt;p&gt;Theo C&amp;ocirc;ng v\u0103n n&amp;agrave;y, v\u1ec1 nguy&amp;ecirc;n t\u1eafc chung: M&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i \u0111\u01b0\u1ee3c ph&amp;eacute;p mang v&amp;agrave;o ph&amp;ograve;ng thi l&amp;agrave; c&amp;aacute;c m&amp;aacute;y t&amp;iacute;nh kh&amp;ocirc;ng c&amp;oacute; ch\u1ee9c n\u0103ng so\u1ea1n th\u1ea3o v\u0103n b\u1ea3n, kh&amp;ocirc;ng c&amp;oacute; th\u1ebb nh\u1edb \u0111\u1ec3 l\u01b0u tr\u1eef d\u1eef li\u1ec7u v&amp;agrave; kh&amp;ocirc;ng th\u1ec3 truy\u1ec1n, nh\u1eadn \u0111\u01b0\u1ee3c th&amp;ocirc;ng tin, t&amp;iacute;n hi\u1ec7u &amp;acirc;m thanh, h&amp;igrave;nh \u1ea3nh tr\u1ef1c ti\u1ebfp.&lt;\/p&gt;\r\n\r\n&lt;h3&gt;&lt;strong&gt;Danh s&amp;aacute;ch m\u1ed9t s\u1ed1 m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i th&amp;ocirc;ng d\u1ee5ng \u0111\u01b0\u1ee3c ph&amp;eacute;p mang v&amp;agrave;o ph&amp;ograve;ng thi trong k\u1ef3 thi t\u1ed1t nghi\u1ec7p trung h\u1ecdc ph\u1ed5 th&amp;ocirc;ng n\u0103m 2021 l&amp;agrave;:&lt;\/strong&gt;&lt;\/h3&gt;\r\n\r\n&lt;ul&gt;\r\n\t&lt;li&gt;- Casio FX-500 MS, FX-570 MS, FX-570ES Plus, FX-570VN Plus, FX580VN X;&lt;\/li&gt;\r\n\t&lt;li&gt;- VinaCal 500MS, 570MS, 570ES Plus, 570ES Plus II, 570EX Plus, 680EX Plus;&lt;\/li&gt;\r\n\t&lt;li&gt;- Catel NT CAVIET NT-570ES Plus II, NT-570ES Plus, NT-500MS, NT570VN Plus, NT-580EX, NT-570NS, NT-690VE X;&lt;\/li&gt;\r\n\t&lt;li&gt;- Thi&amp;ecirc;n Long FX590VN Flexio, FX680VN Flexio; - Deli W1710, WD991ES; - Eras E370, E371, E372, E380;&lt;\/li&gt;\r\n\t&lt;li&gt;- Vinaplus FX-580VNX PLUS II, FX-580 X;&lt;\/li&gt;\r\n&lt;\/ul&gt;\r\n\r\n&lt;p&gt;v&amp;agrave; c&amp;aacute;c m&amp;aacute;y t&amp;iacute;nh b\u1ecf t&amp;uacute;i t\u01b0\u01a1ng \u0111\u01b0\u01a1ng \u0111&amp;aacute;p \u1ee9ng theo quy \u0111\u1ecbnh&lt;\/p&gt;","hinhanh":"tintuc35.jpg","views":10,"kichhoat":0,"created_at":"2021-06-12T14:46:03.000000Z","updated_at":"2022-10-27T13:50:22.000000Z"},{"id":7,"tieude":"T\u1ed5 ch\u1ee9c thi \u0111\u00e1nh gi\u00e1 n\u0103ng l\u1ef1c trong \u0111i\u1ec1u ki\u1ec7n gi\u00e3n c\u00e1ch","slug_tintuc":"to-chuc-thi-danh-gia-nang-luc-trong-dieu-kien-gian-cach","tomtat":"&lt;p&gt;Tr\u01b0\u1edbc di\u1ec5n bi\u1ebfn ph\u1ee9c t\u1ea1p d\u1ecbch COVID-19, \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i th\u00f4ng b\u00e1o sinh \u0111&amp;atilde; \u0111\u0103ng k&amp;yacute; d\u1ef1 thi th&amp;agrave;nh c&amp;ocirc;ng c&amp;aacute;c \u0111\u1ee3t thi 211, 212 v&amp;agrave; 213 (1, 2, 3) s\u1ebd tham gia thi \u0111&amp;aacute;nh gi&amp;aacute; n\u0103ng l\u1ef1c trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch x&amp;atilde; h\u1ed9i.&lt;\/p&gt;","noidung":"&lt;p&gt;\u0110\u1ed1i t\u01b0\u1ee3ng d\u1ef1 thi trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch x&amp;atilde; h\u1ed9i l&amp;agrave; th&amp;iacute; sinh \u0111&amp;atilde; \u0111\u0103ng k&amp;yacute; d\u1ef1 thi th&amp;agrave;nh c&amp;ocirc;ng m\u1ed9t trong c&amp;aacute;c \u0111\u1ee3t thi 211, 212, 213; \u0111ang sinh s\u1ed1ng t\u1ea1i khu v\u1ef1c ch\u01b0a c&amp;oacute; ca F0, \u1ed5 d\u1ecbch COVID-19 ho\u1eb7c c&amp;oacute; ca b\u1ec7nh \u0111&amp;atilde; \u0111\u01b0\u1ee3c c\u01a1 quan y t\u1ebf x&amp;aacute;c \u0111\u1ecbnh kh\u1ecfi b\u1ec7nh, khu v\u1ef1c \u0111&amp;atilde; h\u1ebft c&amp;aacute;ch ly\/phong t\u1ecfa; kh&amp;ocirc;ng l&amp;agrave; \u0111\u1ed1i t\u01b0\u1ee3ng F1, F2 trong d\u1ecbch b\u1ec7nh COVID-19 t&amp;iacute;nh t\u1eeb ng&amp;agrave;y 15\/5\/2021.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/66qg2.jpg\" title=\"Ch\u00fa th\u00edch \u1ea3nh\"&gt;&lt;img alt=\"Ch\u00fa th\u00edch \u1ea3nh\" height=\"523\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/66qg2.jpg\" width=\"786\" \/&gt;&lt;\/a&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;\u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i chu\u1ea9n b\u1ecb c\u01a1 s\u1edf v\u1eadt ch\u1ea5t \u0111\u1ec3 th&amp;iacute; sinh thi trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch. \u1ea2nh: VNU.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Nh\u1eefng th&amp;iacute; sinh kh&amp;ocirc;ng \u0111\u1ee7 \u0111i\u1ec1u ki\u1ec7n d\u1ef1 thi gi&amp;atilde;n c&amp;aacute;ch trong th&amp;aacute;ng 6\/2021 s\u1ebd tham gia thi khi \u0111&amp;aacute;p \u1ee9ng c&amp;aacute;c \u0111i\u1ec1u ki\u1ec7n n&amp;ecirc;u tr&amp;ecirc;n ho\u1eb7c khi ki\u1ec3m so&amp;aacute;t \u0111\u01b0\u1ee3c d\u1ecbch b\u1ec7nh COVID-19 trong c\u1ed9ng \u0111\u1ed3ng.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Trung t&amp;acirc;m Kh\u1ea3o th&amp;iacute; \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i d\u1ef1 ki\u1ebfn t\u1ed5 ch\u1ee9c c&amp;aacute;c ng&amp;agrave;y thi trong \u0111i\u1ec1u ki\u1ec7n gi&amp;atilde;n c&amp;aacute;ch x&amp;atilde; h\u1ed9i cho t\u1eebng \u0111\u1ee3t thi. Th&amp;iacute; sinh \u0111\u01b0\u1ee3c quy\u1ec1n thay \u0111\u1ed5i ca trong c&amp;ugrave;ng ng&amp;agrave;y ho\u1eb7c kh&amp;aacute;c ng&amp;agrave;y thi tr\u01b0\u1edbc khi h\u1ec7 th\u1ed1ng chuy\u1ec3n ca thi \u0111&amp;oacute;ng c\u1ed5ng.&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/65qg1.png\" title=\"Ch\u00fa th\u00edch \u1ea3nh\"&gt;&lt;img alt=\"Ch\u00fa th\u00edch \u1ea3nh\" height=\"327\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/65qg1.png\" width=\"672\" \/&gt;&lt;\/a&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/65qg1.png\" title=\"Ch\u00fa th\u00edch \u1ea3nh\"&gt;Th\u1eddi gian c&amp;oacute; m\u1eb7t \u1edf ph&amp;ograve;ng thi.&lt;\/a&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Ph\u1ea7n m\u1ec1m ki\u1ec3m so&amp;aacute;t s\u1ed1 l\u01b0\u1ee3ng th&amp;iacute; sinh c\u1ee7a m\u1ed7i ca thi (t\u1ed1i \u0111a 9 - 10 th&amp;iacute; sinh\/ca thi) v&amp;agrave; th\u1eddi gian v&amp;agrave;o ph&amp;ograve;ng thi \u0111\u1ec3 \u0111\u1ea3m b\u1ea3o kh&amp;ocirc;ng qu&amp;aacute; 10 th&amp;iacute; sinh c&amp;oacute; m\u1eb7t t\u1ea1i khu v\u1ef1c ti\u1ebfp \u0111&amp;oacute;n th&amp;iacute; sinh.&amp;nbsp;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Tr\u01b0\u1edbc ng&amp;agrave;y thi 3 ng&amp;agrave;y, Trung t&amp;acirc;m Kh\u1ea3o th&amp;iacute; \u0110\u1ea1i h\u1ecdc Qu\u1ed1c gia H&amp;agrave; N\u1ed9i h\u01b0\u1edbng d\u1eabn chi ti\u1ebft th\u1ee7 t\u1ee5c d\u1ef1 thi cho th&amp;iacute; sinh bao g\u1ed3m khai b&amp;aacute;o y t\u1ebf, th&amp;ocirc;ng \u0111i\u1ec7p 5K, v\u1eadt d\u1ee5ng mang v&amp;agrave;o ph&amp;ograve;ng thi, th&amp;ocirc;ng b&amp;aacute;o ng\u01b0\u1eddi nh&amp;agrave; th&amp;iacute; sinh h\u1ea1n ch\u1ebf c&amp;oacute; m\u1eb7t t\u1ea1i khu v\u1ef1c thi. Th&amp;iacute; sinh tu&amp;acirc;n th\u1ee7 tuy\u1ec7t \u0111\u1ed1i c&amp;aacute;c h\u01b0\u1edbng d\u1eabn c\u1ee7a Trung t&amp;acirc;m Kh\u1ea3o th&amp;iacute; tr\u01b0\u1edbc khi \u0111\u1ebfn \u0111\u1ecba \u0111i\u1ec3m thi.&lt;\/p&gt;\r\n\r\n&lt;p&gt;Th\u1eddi gian \u0111\u0103ng k&amp;yacute; chuy\u1ec3n ca thi cho t\u1eebng \u0111\u1ee3t \u0111\u01b0\u1ee3c \u0111i\u1ec1u ch\u1ec9nh cho ph&amp;ugrave; h\u1ee3p v\u1edbi t&amp;igrave;nh h&amp;igrave;nh th\u1ef1c t\u1ebf, khu v\u1ef1c th&amp;iacute; sinh \u0111ang sinh s\u1ed1ng, \u0111\u1ecba b&amp;agrave;n ph&amp;ograve;ng d\u1ecbch.&lt;\/p&gt;\r\n\r\n&lt;p&gt;L\u1ecbch tr&amp;igrave;nh \u0111\u0103ng k&amp;yacute; chuy\u1ec3n ca thi v&amp;agrave; t\u1ed5 ch\u1ee9c thi d\u1ef1 ki\u1ebfn nh\u01b0 sau:&lt;\/p&gt;\r\n\r\n&lt;p&gt;&lt;a href=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/56qg2.png\" title=\"56qg2\"&gt;&lt;img alt=\"56qg2\" height=\"605\" src=\"https:\/\/thptquocgia.edu.vn\/uploads\/news\/2021_06\/56qg2.png\" width=\"667\" \/&gt;&lt;\/a&gt;&lt;\/p&gt;","hinhanh":"tintuc219.jpg","views":5,"kichhoat":0,"created_at":"2021-06-12T14:36:04.000000Z","updated_at":"2022-10-27T13:52:25.000000Z"},{"id":6,"tieude":"C\u00f4ng b\u1ed1 ph\u01b0\u01a1ng \u00e1n tuy\u1ec3n sinh n\u0103m 2021 - CH\u00cdNH TH\u1ee8C","slug_tintuc":"cong-bo-phuong-an-tuyen-sinh-nam-2021-chinh-thuc","tomtat":"&lt;p&gt;Tr\u01b0\u1eddng \u0110\u1ea1i h\u1ecdc Lu\u1eadt H&amp;agrave; N\u1ed9i v\u1eeba c&amp;ocirc;ng b\u1ed1 \u0111\u1ec1 &amp;aacute;n ch&amp;iacute;nh th\u1ee9c tuy\u1ec3n sinh tr&amp;igrave;nh \u0111\u1ed9 \u0111\u1ea1i h\u1ecdc ch&amp;iacute;nh quy n\u0103m 2021.&lt;\/p&gt;","noidung":"&lt;p&gt;&lt;strong&gt;1.1. \u0110\u1ed1i t\u01b0\u1ee3ng tuy\u1ec3n sinh&lt;\/strong&gt;&lt;\/p&gt;\r\n\r\n&lt;p&gt;Th&amp;iacute; sinh tham gia tuy\u1ec3n sinh ph\u1ea3i \u0111&amp;aacute;p \u1ee9ng c&amp;aacute;c \u0111i\u1ec1u ki\u1ec7n sau \u0111&amp;acirc;y:&lt;\/p&gt;\r\n\r\n&lt;p&gt;a) \u0110&amp;atilde; t\u1ed1t nghi\u1ec7p THPT ho\u1eb7c \u0111&amp;atilde; t\u1ed1t nghi\u1ec7p trung c\u1ea5p (sau \u0111&amp;acirc;y g\u1ecdi chung l&amp;agrave; t\u1ed1t nghi\u1ec7p THPT);&lt;\/p&gt;\r\n\r\n&lt;p&gt;Ng\u01b0\u1eddi t\u1ed1t nghi\u1ec7p trung c\u1ea5p nh\u01b0ng ch\u01b0a c&amp;oacute; b\u1eb1ng t\u1ed1t nghi\u1ec7p THPT ph\u1ea3i h\u1ecdc v&amp;agrave; thi \u0111\u1ea1t y&amp;ecirc;u c\u1ea7u \u0111\u1ee7 kh\u1ed1i l\u01b0\u1ee3ng ki\u1ebfn th\u1ee9c v\u0103n h&amp;oacute;a THPT theo quy \u0111\u1ecbnh c\u1ee7a Lu\u1eadt Gi&amp;aacute;o d\u1ee5c v&amp;agrave; c&amp;aacute;c v\u0103n b\u1ea3n h\u01b0\u1edbng d\u1eabn thi h&amp;agrave;nh.&lt;\/p&gt;\r\n\r\n&lt;p&gt;b) C&amp;oacute; \u0111\u1ee7 s\u1ee9c kho\u1ebb \u0111\u1ec3 h\u1ecdc t\u1eadp theo quy \u0111\u1ecbnh hi\u1ec7n h&amp;agrave;nh. \u0110\u1ed1i v\u1edbi ng\u01b0\u1eddi khuy\u1ebft t\u1eadt \u0111\u01b0\u1ee3c c\u1ea5p c&amp;oacute; th\u1ea9m quy\u1ec1n c&amp;ocirc;ng nh\u1eadn b\u1ecb d\u1ecb d\u1ea1ng, d\u1ecb t\u1eadt, suy gi\u1ea3m kh\u1ea3 n\u0103ng t\u1ef1 l\u1ef1c trong sinh ho\u1ea1t v&amp;agrave; h\u1ecdc t\u1eadp do h\u1eadu qu\u1ea3 c\u1ee7a ch\u1ea5t \u0111\u1ed9c ho&amp;aacute; h\u1ecdc l&amp;agrave; con \u0111\u1ebb c\u1ee7a ng\u01b0\u1eddi ... (set the log level to DEBUG or TRACE to see the full content) 
+ </msg>
+<msg timestamp="20230114 20:38:20.039" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:38:20.039" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230114 20:38:19.861" endtime="20230114 20:38:20.039"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230114 20:38:20.040" level="INFO">${json_object} = {'news': [{'id': 8, 'tieude': 'Tin tức mới nhất về kỳ thi THPT quốc gia', 'slug_tintuc': 'tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia', 'tomtat': '&lt;p&gt;C&amp;ocirc;ng văn 1986/BGDĐT-CNTT của Bộ Gi&amp;aacute;o dục...</msg>
+<status status="PASS" starttime="20230114 20:38:20.039" endtime="20230114 20:38:20.041"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${news}</var>
+<arg>${json_object}</arg>
+<arg>$.${data}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230114 20:38:20.070" level="INFO">${news} = [{'id': 8, 'tieude': 'Tin tức mới nhất về kỳ thi THPT quốc gia', 'slug_tintuc': 'tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia', 'tomtat': '&lt;p&gt;C&amp;ocirc;ng văn 1986/BGDĐT-CNTT của Bộ Gi&amp;aacute;o dục v&amp;agrave...</msg>
+<status status="PASS" starttime="20230114 20:38:20.041" endtime="20230114 20:38:20.070"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${result}</var>
+<arg>${news[0]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:20.071" level="INFO">${result} = {'id': 8, 'tieude': 'Tin tức mới nhất về kỳ thi THPT quốc gia', 'slug_tintuc': 'tin-tuc-moi-nhat-ve-ky-thi-thpt-quoc-gia', 'tomtat': '&lt;p&gt;C&amp;ocirc;ng văn 1986/BGDĐT-CNTT của Bộ Gi&amp;aacute;o dục v&amp;agrave;...</msg>
+<status status="PASS" starttime="20230114 20:38:20.070" endtime="20230114 20:38:20.071"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${result_d}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230114 20:38:20.071" endtime="20230114 20:38:20.072"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:20.073" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230114 20:38:20.072" endtime="20230114 20:38:20.073"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:20.073" endtime="20230114 20:38:20.073"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230114 20:38:20.074" level="INFO">${contentTypeValue} = application/json</msg>
+<status status="PASS" starttime="20230114 20:38:20.073" endtime="20230114 20:38:20.074"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${contentTypeValue}</arg>
+<arg>application/json</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:20.074" endtime="20230114 20:38:20.075"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:19.860" endtime="20230114 20:38:20.075"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20230114 20:38:19.856" endtime="20230114 20:38:20.075"/>
+</test>
+<test id="s1-t4" name="TC04_Check_get_subject">
+<kw name="create_new_session" library="Home" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_production_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230114 20:38:20.077" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:38:20.077" endtime="20230114 20:38:20.077"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:20.076" endtime="20230114 20:38:20.077"/>
+</kw>
+<kw name="check_get_subject" library="Home">
+<arg>subject[0]</arg>
+<arg>'tenmonhoc': 'Môn Hóa Học'</arg>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/subject</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:38:20.201" level="INFO">GET Request : url=https://datncl.top/api/subject 
+ path_url=/api/subject 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230114 20:38:20.201" level="INFO">GET Response : url=https://datncl.top/api/subject 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '56', 'content-length': '1057', 'date': 'Sat, 14 Jan 2023 13:38:19 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"subject":[{"id":22,"slug_monhoc":"mon-hoa-hoc","tenmonhoc":"M\u00f4n H\u00f3a H\u1ecdc","mota":"Danh m\u1ee5c m\u00f4n h\u00f3a h\u1ecdc","kichhoat":"0","created_at":"2022-10-27 19:50:52","updated_at":"2022-10-27 19:50:52"},{"id":19,"slug_monhoc":"mon-sinh-hoc","tenmonhoc":"M\u00f4n Sinh H\u1ecdc","mota":"Danh m\u1ee5c m\u00f4n sinh h\u1ecdc","kichhoat":"0","created_at":"2022-10-08 22:01:56","updated_at":"2022-10-08 22:01:56"},{"id":8,"slug_monhoc":"mon-vat-ly","tenmonhoc":"M\u00f4n V\u1eadt L\u00fd","mota":"Danh m\u1ee5c m\u00f4n v\u1eadt l\u00fd","kichhoat":"0","created_at":"2021-06-08 20:55:52","updated_at":"2021-06-08 20:55:52"},{"id":7,"slug_monhoc":"mon-tieng-anh","tenmonhoc":"M\u00f4n Ti\u1ebfng Anh","mota":"Danh m\u1ee5c m\u00f4n ti\u1ebfng anh","kichhoat":"0","created_at":"2021-06-08 20:55:31","updated_at":"2021-06-08 20:55:31"},{"id":6,"slug_monhoc":"mon-ngu-van","tenmonhoc":"M\u00f4n Ng\u1eef V\u0103n","mota":"Danh m\u1ee5c m\u00f4n v\u0103n","kichhoat":"0","created_at":"2021-06-08 20:55:14","updated_at":"2021-06-08 20:58:19"}]} 
+ </msg>
+<msg timestamp="20230114 20:38:20.201" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:38:20.201" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230114 20:38:20.079" endtime="20230114 20:38:20.201"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230114 20:38:20.202" level="INFO">${json_object} = {'subject': [{'id': 22, 'slug_monhoc': 'mon-hoa-hoc', 'tenmonhoc': 'Môn Hóa Học', 'mota': 'Danh mục môn hóa học', 'kichhoat': '0', 'created_at': '2022-10-27 19:50:52', 'updated_at': '2022-10-27 19:50:...</msg>
+<status status="PASS" starttime="20230114 20:38:20.201" endtime="20230114 20:38:20.202"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${subject}</var>
+<arg>${json_object}</arg>
+<arg>$.${data}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230114 20:38:20.222" level="INFO">${subject} = [{'id': 22, 'slug_monhoc': 'mon-hoa-hoc', 'tenmonhoc': 'Môn Hóa Học', 'mota': 'Danh mục môn hóa học', 'kichhoat': '0', 'created_at': '2022-10-27 19:50:52', 'updated_at': '2022-10-27 19:50:52'}]</msg>
+<status status="PASS" starttime="20230114 20:38:20.202" endtime="20230114 20:38:20.222"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${result}</var>
+<arg>${subject[0]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:20.223" level="INFO">${result} = {'id': 22, 'slug_monhoc': 'mon-hoa-hoc', 'tenmonhoc': 'Môn Hóa Học', 'mota': 'Danh mục môn hóa học', 'kichhoat': '0', 'created_at': '2022-10-27 19:50:52', 'updated_at': '2022-10-27 19:50:52'}</msg>
+<status status="PASS" starttime="20230114 20:38:20.222" endtime="20230114 20:38:20.223"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${result_d}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230114 20:38:20.223" endtime="20230114 20:38:20.223"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:20.224" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230114 20:38:20.223" endtime="20230114 20:38:20.224"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:20.224" endtime="20230114 20:38:20.224"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230114 20:38:20.225" level="INFO">${contentTypeValue} = application/json</msg>
+<status status="PASS" starttime="20230114 20:38:20.225" endtime="20230114 20:38:20.225"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${contentTypeValue}</arg>
+<arg>application/json</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:20.225" endtime="20230114 20:38:20.227"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:20.078" endtime="20230114 20:38:20.227"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20230114 20:38:20.075" endtime="20230114 20:38:20.227"/>
+</test>
+<test id="s1-t5" name="TC05_Check_get_slider">
+<kw name="create_new_session" library="Home" type="SETUP">
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_production_url}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230114 20:38:20.227" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:38:20.227" endtime="20230114 20:38:20.227"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:20.227" endtime="20230114 20:38:20.227"/>
+</kw>
+<kw name="check_get_slider" library="Home">
+<arg>slider[0]</arg>
+<arg>'slider_name': 'Slider giới thiệu'</arg>
+<kw name="GET On Session" library="RequestsLibrary">
+<var>${response}</var>
+<arg>myssion</arg>
+<arg>/slider</arg>
+<doc>Sends a GET request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:38:20.359" level="INFO">GET Request : url=https://datncl.top/api/slider 
+ path_url=/api/slider 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive'} 
+ body=None 
+ </msg>
+<msg timestamp="20230114 20:38:20.359" level="INFO">GET Response : url=https://datncl.top/api/slider 
+ status=200, reason=OK 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'access-control-allow-origin': '*', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '55', 'content-length': '840', 'date': 'Sat, 14 Jan 2023 13:38:19 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"slider":[{"id":3,"slider_name":"Slider gi\u1edbi thi\u1ec7u","slug_slider":"slider-gioi-thieu","slider_image":"slider183.jpg","slider_desc":"&lt;p&gt;Gi\u1edbi thi\u1ec7u th&amp;ocirc;ng tin trung t&amp;acirc;m&lt;\/p&gt;","kichhoat":0,"created_at":"2021-06-12 21:22:17","updated_at":"2023-01-14 20:21:31"},{"id":2,"slider_name":"Slider gi\u1edbi thi\u1ec7u 2","slug_slider":"slider-gioi-thieu-2","slider_image":"anhbia179.jpg","slider_desc":"&lt;p&gt;Gi\u1edbi thi\u1ec7u th\u1ea7y c&amp;ocirc; gi&amp;aacute;o&lt;\/p&gt;","kichhoat":0,"created_at":"2021-06-12 21:22:42","updated_at":"2023-01-14 20:21:49"},{"id":1,"slider_name":"Slider gi\u1edbi thi\u1ec7u 3","slug_slider":"slider-gioi-thieu-3","slider_image":"anhbia411.jpg","slider_desc":"&lt;p&gt;C&amp;ocirc; Nguy\u1ec5n Th\u1ecb Thanh Nga&lt;\/p&gt;","kichhoat":0,"created_at":"2021-06-12 21:23:12","updated_at":"2023-01-14 20:22:02"}]} 
+ </msg>
+<msg timestamp="20230114 20:38:20.359" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:38:20.360" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230114 20:38:20.229" endtime="20230114 20:38:20.360"/>
+</kw>
+<kw name="Convert String To Json" library="JSONLibrary">
+<var>${json_object}</var>
+<arg>${response.content}</arg>
+<doc>Convert String to JSON object</doc>
+<msg timestamp="20230114 20:38:20.361" level="INFO">${json_object} = {'slider': [{'id': 3, 'slider_name': 'Slider giới thiệu', 'slug_slider': 'slider-gioi-thieu', 'slider_image': 'slider183.jpg', 'slider_desc': '&lt;p&gt;Giới thiệu th&amp;ocirc;ng tin trung t&amp;acirc;m&lt;/p&gt;', 'kich...</msg>
+<status status="PASS" starttime="20230114 20:38:20.360" endtime="20230114 20:38:20.361"/>
+</kw>
+<kw name="Get Value From Json" library="JSONLibrary">
+<var>${slider}</var>
+<arg>${json_object}</arg>
+<arg>$.${data}</arg>
+<doc>Get Value From JSON using JSONPath</doc>
+<msg timestamp="20230114 20:38:20.384" level="INFO">${slider} = [{'id': 3, 'slider_name': 'Slider giới thiệu', 'slug_slider': 'slider-gioi-thieu', 'slider_image': 'slider183.jpg', 'slider_desc': '&lt;p&gt;Giới thiệu th&amp;ocirc;ng tin trung t&amp;acirc;m&lt;/p&gt;', 'kichhoat': 0, '...</msg>
+<status status="PASS" starttime="20230114 20:38:20.361" endtime="20230114 20:38:20.384"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${result}</var>
+<arg>${slider[0]}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:20.385" level="INFO">${result} = {'id': 3, 'slider_name': 'Slider giới thiệu', 'slug_slider': 'slider-gioi-thieu', 'slider_image': 'slider183.jpg', 'slider_desc': '&lt;p&gt;Giới thiệu th&amp;ocirc;ng tin trung t&amp;acirc;m&lt;/p&gt;', 'kichhoat': 0, 'c...</msg>
+<status status="PASS" starttime="20230114 20:38:20.384" endtime="20230114 20:38:20.385"/>
+</kw>
+<kw name="Should Contain" library="BuiltIn">
+<arg>${result}</arg>
+<arg>${result_d}</arg>
+<doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
+<status status="PASS" starttime="20230114 20:38:20.386" endtime="20230114 20:38:20.386"/>
+</kw>
+<kw name="Convert To String" library="BuiltIn">
+<var>${status_code}</var>
+<arg>${response.status_code}</arg>
+<doc>Converts the given item to a Unicode string.</doc>
+<msg timestamp="20230114 20:38:20.387" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230114 20:38:20.386" endtime="20230114 20:38:20.387"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${status_code}</arg>
+<arg>200</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:20.387" endtime="20230114 20:38:20.387"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${contentTypeValue}</var>
+<arg>${response.headers}</arg>
+<arg>Content-Type</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20230114 20:38:20.388" level="INFO">${contentTypeValue} = application/json</msg>
+<status status="PASS" starttime="20230114 20:38:20.388" endtime="20230114 20:38:20.388"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${contentTypeValue}</arg>
+<arg>application/json</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20230114 20:38:20.389" endtime="20230114 20:38:20.389"/>
+</kw>
+<status status="PASS" starttime="20230114 20:38:20.228" endtime="20230114 20:38:20.389"/>
+</kw>
+<tag>API</tag>
+<status status="PASS" starttime="20230114 20:38:20.227" endtime="20230114 20:38:20.389"/>
+</test>
+<status status="PASS" starttime="20230114 20:38:18.677" endtime="20230114 20:38:20.390"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="5" fail="0" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">API</stat>
+<stat pass="5" fail="0" skip="0">API</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Contact">Contact</stat>
+<stat pass="5" fail="0" skip="0" id="s1" name="Home">Home</stat>
 </suite>
 </statistics>
 <errors>

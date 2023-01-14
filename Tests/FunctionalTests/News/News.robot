@@ -1,8 +1,8 @@
 
 *** Settings ***
 Resource   News_User_Defined_Keyword.resource
-Test Setup  Start Testcase
-Test Teardown   Finish Testcase
+Test Setup  Open Admin Site Using Chrome Browser
+Test Teardown   Close Website
 *** Variables ***
 *** Test Cases ***
 #Create new

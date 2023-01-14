@@ -1,50 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 4.1.2 (Python 3.9.12 on win32)" generated="20230103 22:22:52.279" rpa="false" schemaversion="2">
+<robot generator="Robot 4.1.2 (Python 3.9.12 on win32)" generated="20230114 20:53:37.953" rpa="false" schemaversion="2">
 <suite id="s1" name="Contact" source="C:\Users\nguye\PycharmProjects\DATN_RF\Tests\API_Test\Contacts\Contact.robot">
 <test id="s1-t1" name="TC01_Contact_Successfully">
 <kw name="create_new_session" library="Contact" type="SETUP">
 <kw name="Open Browser" library="SeleniumLibrary">
-<arg>${url_local_page}</arg>
+<arg>${url_production_page}</arg>
 <arg>headlesschrome</arg>
 <doc>Opens a new browser instance to the optional ``url``.</doc>
-<msg timestamp="20230103 22:22:52.889" level="INFO">Opening browser 'headlesschrome' to base url 'http://localhost/Project/tschool'.</msg>
-<status status="PASS" starttime="20230103 22:22:52.887" endtime="20230103 22:22:57.869"/>
+<msg timestamp="20230114 20:53:38.572" level="INFO">Opening browser 'headlesschrome' to base url 'https://datncl.top/'.</msg>
+<status status="PASS" starttime="20230114 20:53:38.572" endtime="20230114 20:53:41.488"/>
 </kw>
 <kw name="Click Element" library="SeleniumLibrary">
 <arg>//a[contains(text(),'Liên hệ')]</arg>
 <doc>Click the element identified by ``locator``.</doc>
-<msg timestamp="20230103 22:22:57.870" level="INFO">Clicking element '//a[contains(text(),'Liên hệ')]'.</msg>
-<status status="PASS" starttime="20230103 22:22:57.869" endtime="20230103 22:22:58.180"/>
+<msg timestamp="20230114 20:53:41.490" level="INFO">Clicking element '//a[contains(text(),'Liên hệ')]'.</msg>
+<status status="PASS" starttime="20230114 20:53:41.489" endtime="20230114 20:53:41.616"/>
 </kw>
 <kw name="Get Cookie" library="SeleniumLibrary">
 <var>${cookie_value}</var>
 <arg>XSRF-TOKEN</arg>
 <doc>Returns information of cookie with ``name`` as an object.</doc>
-<msg timestamp="20230103 22:22:58.232" level="INFO">${cookie_value} = name=XSRF-TOKEN
-value=eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbHhkZFRzSTBLWnVCeE1Od3NYTFZMaTUxQk...</msg>
-<status status="PASS" starttime="20230103 22:22:58.181" endtime="20230103 22:22:58.232"/>
+<msg timestamp="20230114 20:53:41.680" level="INFO">${cookie_value} = name=XSRF-TOKEN
+value=eyJpdiI6IjB2eXJDZGNSdC9NMy8wMTVaaGtPWmc9PSIsInZhbHVlIjoiWEZGNURnejR3c0xjanBYNnp6ckFFQThwV0RVcXlhbjVXQmo4cTJpKy9rYXhsdkZSR1h6MUJIUFdqZlR5NVFXdFFENkVUZzJSdE8vQWVxZnU3d1hEdXVOY2FSZn...</msg>
+<status status="PASS" starttime="20230114 20:53:41.617" endtime="20230114 20:53:41.680"/>
 </kw>
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230103 22:22:58.232" endtime="20230103 22:23:00.289"/>
+<status status="PASS" starttime="20230114 20:53:41.682" endtime="20230114 20:53:43.741"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${header}</var>
 <arg>Content-Type=application/json</arg>
 <arg>X-XSRF-TOKEN=${cookie_value.value}</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230103 22:23:00.292" level="INFO">${header} = {'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbH...</msg>
-<status status="PASS" starttime="20230103 22:23:00.290" endtime="20230103 22:23:00.293"/>
+<msg timestamp="20230114 20:53:43.748" level="INFO">${header} = {'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IjB2eXJDZGNSdC9NMy8wMTVaaGtPWmc9PSIsInZhbHVlIjoiWEZGNURnejR3c0xjanBYNnp6ckFFQThwV0RVcXlhbjVXQmo4cTJpKy9rYXhsdkZSR1h6MUJIUFdqZlR5NVFXdFFENk...</msg>
+<status status="PASS" starttime="20230114 20:53:43.743" endtime="20230114 20:53:43.748"/>
 </kw>
 <kw name="Create Session" library="RequestsLibrary">
 <arg>myssion</arg>
-<arg>${base_url}</arg>
+<arg>${base_production_url}</arg>
 <arg>headers=${header}</arg>
 <doc>Create Session: create a HTTP session to a server</doc>
-<msg timestamp="20230103 22:23:00.294" level="INFO">Creating Session using : alias=myssion, url=http://localhost/Project/tschool/api, headers={'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbHhkZFRzSTBLWnVCeE1Od3NYTFZMaTUxQkNQOW1VVEVtOVBmVEV0bW1QeGZub3FINDljZFFSMzVzRGRWOGQiLCJtYWMiOiJjNzdhZTFiOGZmMTdlMTg2OGRkMjQ2NzkzMzZmYWE3YjYxNjE0MWE5YjBmY2RjZTc4Nzc1ODVlMWM4NGI2ZDI5IiwidGFnIjoiIn0%3D'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
-<status status="PASS" starttime="20230103 22:23:00.293" endtime="20230103 22:23:00.295"/>
+<msg timestamp="20230114 20:53:43.751" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IjB2eXJDZGNSdC9NMy8wMTVaaGtPWmc9PSIsInZhbHVlIjoiWEZGNURnejR3c0xjanBYNnp6ckFFQThwV0RVcXlhbjVXQmo4cTJpKy9rYXhsdkZSR1h6MUJIUFdqZlR5NVFXdFFENkVUZzJSdE8vQWVxZnU3d1hEdXVOY2FSZnlDcnNFdUlNbjY0TVRsbjJVSDJBRUxpYUp0c3lmVFYyUzhFMUIiLCJtYWMiOiIwYTAyM2U5MmM3Njc1NGVmYmE3MTk3MDVlMzhjNzhiZGZlMWEyNWNlMDM1Y2U2NGNjOGRhNDA5N2U1ZDNiNWFmIiwidGFnIjoiIn0%3D'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:53:43.749" endtime="20230114 20:53:43.752"/>
 </kw>
-<status status="PASS" starttime="20230103 22:22:52.887" endtime="20230103 22:23:00.295"/>
+<status status="PASS" starttime="20230114 20:53:38.572" endtime="20230114 20:53:43.752"/>
 </kw>
 <kw name="Create Dictionary" library="BuiltIn">
 <var>${body}</var>
@@ -53,8 +53,8 @@ value=eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0
 <arg>sodienthoai=8528888820</arg>
 <arg>khoahocquantam=test</arg>
 <doc>Creates and returns a dictionary based on the given ``items``.</doc>
-<msg timestamp="20230103 22:23:00.296" level="INFO">${body} = {'hoten': 'test', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
-<status status="PASS" starttime="20230103 22:23:00.296" endtime="20230103 22:23:00.297"/>
+<msg timestamp="20230114 20:53:43.755" level="INFO">${body} = {'hoten': 'test', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:53:43.753" endtime="20230114 20:53:43.755"/>
 </kw>
 <kw name="POST On Session" library="RequestsLibrary">
 <var>${response}</var>
@@ -62,61 +62,706 @@ value=eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0
 <arg>/contact</arg>
 <arg>json=${body}</arg>
 <doc>Sends a POST request on a previously created HTTP Session.</doc>
-<msg timestamp="20230103 22:23:00.616" level="INFO">POST Request : url=http://localhost/Project/tschool/api/contact 
- path_url=/Project/tschool/api/contact 
- headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IkZJZ1lBSUc1RWF5NjYxSGR1djdUVUE9PSIsInZhbHVlIjoiYmoraFpsU1JXSjBRU0tuMzI4RnZoK09PTHFYNnRwcElMWm9oandDYXBiVHBVVFJPYWprbDladnlDeVV3Njc0eEpBbHhkZFRzSTBLWnVCeE1Od3NYTFZMaTUxQkNQOW1VVEVtOVBmVEV0bW1QeGZub3FINDljZFFSMzVzRGRWOGQiLCJtYWMiOiJjNzdhZTFiOGZmMTdlMTg2OGRkMjQ2NzkzMzZmYWE3YjYxNjE0MWE5YjBmY2RjZTc4Nzc1ODVlMWM4NGI2ZDI5IiwidGFnIjoiIn0%3D', 'Content-Length': '99'} 
+<msg timestamp="20230114 20:53:44.062" level="INFO">POST Request : url=https://datncl.top/api/contact 
+ path_url=/api/contact 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6IjB2eXJDZGNSdC9NMy8wMTVaaGtPWmc9PSIsInZhbHVlIjoiWEZGNURnejR3c0xjanBYNnp6ckFFQThwV0RVcXlhbjVXQmo4cTJpKy9rYXhsdkZSR1h6MUJIUFdqZlR5NVFXdFFENkVUZzJSdE8vQWVxZnU3d1hEdXVOY2FSZnlDcnNFdUlNbjY0TVRsbjJVSDJBRUxpYUp0c3lmVFYyUzhFMUIiLCJtYWMiOiIwYTAyM2U5MmM3Njc1NGVmYmE3MTk3MDVlMzhjNzhiZGZlMWEyNWNlMDM1Y2U2NGNjOGRhNDA5N2U1ZDNiNWFmIiwidGFnIjoiIn0%3D', 'Content-Length': '99'} 
  body=b'{"hoten": "test", "email": "test@gmail.com", "sodienthoai": "8528888820", "khoahocquantam": "test"}' 
  </msg>
-<msg timestamp="20230103 22:23:00.616" level="INFO">POST Response : url=http://localhost/Project/tschool/api/contact 
+<msg timestamp="20230114 20:53:44.063" level="INFO">POST Response : url=https://datncl.top/api/contact 
  status=200, reason=OK 
- headers={'Date': 'Tue, 03 Jan 2023 15:23:00 GMT', 'Server': 'Apache/2.4.51 (Win64) OpenSSL/1.1.1l PHP/7.4.26', 'X-Powered-By': 'PHP/7.4.26', 'Cache-Control': 'no-cache, private', 'X-RateLimit-Limit': '60', 'X-RateLimit-Remaining': '59', 'Access-Control-Allow-Origin': '*', 'Keep-Alive': 'timeout=5, max=100', 'Connection': 'Keep-Alive', 'Transfer-Encoding': 'chunked', 'Content-Type': 'application/json'} 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '59', 'access-control-allow-origin': '*', 'content-length': '38', 'date': 'Sat, 14 Jan 2023 13:53:43 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
  body={"message":"add contact successfully"} 
  </msg>
-<msg timestamp="20230103 22:23:00.618" level="INFO">${response} = &lt;Response [200]&gt;</msg>
-<status status="PASS" starttime="20230103 22:23:00.297" endtime="20230103 22:23:00.618"/>
+<msg timestamp="20230114 20:53:44.063" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:53:44.065" level="INFO">${response} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20230114 20:53:43.756" endtime="20230114 20:53:44.065"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${status_code}</var>
 <arg>${response.status_code}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230103 22:23:00.618" level="INFO">${status_code} = 200</msg>
-<status status="PASS" starttime="20230103 22:23:00.618" endtime="20230103 22:23:00.618"/>
+<msg timestamp="20230114 20:53:44.071" level="INFO">${status_code} = 200</msg>
+<status status="PASS" starttime="20230114 20:53:44.066" endtime="20230114 20:53:44.071"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${status_code}</arg>
 <arg>200</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20230103 22:23:00.618" endtime="20230103 22:23:00.618"/>
+<status status="PASS" starttime="20230114 20:53:44.072" endtime="20230114 20:53:44.074"/>
 </kw>
 <kw name="Convert To String" library="BuiltIn">
 <var>${res_body}</var>
 <arg>${response.content}</arg>
 <doc>Converts the given item to a Unicode string.</doc>
-<msg timestamp="20230103 22:23:00.620" level="INFO">${res_body} = {"message":"add contact successfully"}</msg>
-<status status="PASS" starttime="20230103 22:23:00.619" endtime="20230103 22:23:00.620"/>
+<msg timestamp="20230114 20:53:44.079" level="INFO">${res_body} = {"message":"add contact successfully"}</msg>
+<status status="PASS" starttime="20230114 20:53:44.075" endtime="20230114 20:53:44.079"/>
 </kw>
 <kw name="Should Contain" library="BuiltIn">
 <arg>${res_body}</arg>
 <arg>add contact successfully</arg>
 <doc>Fails if ``container`` does not contain ``item`` one or more times.</doc>
-<status status="PASS" starttime="20230103 22:23:00.621" endtime="20230103 22:23:00.621"/>
+<status status="PASS" starttime="20230114 20:53:44.080" endtime="20230114 20:53:44.081"/>
 </kw>
 <tag>API</tag>
-<status status="PASS" starttime="20230103 22:22:52.885" endtime="20230103 22:23:00.621"/>
+<status status="PASS" starttime="20230114 20:53:38.571" endtime="20230114 20:53:44.081"/>
 </test>
-<status status="PASS" starttime="20230103 22:22:52.282" endtime="20230103 22:23:00.622"/>
+<test id="s1-t2" name="TC02_Contact_Fail">
+<kw name="create_new_session" library="Contact" type="SETUP">
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>${url_production_page}</arg>
+<arg>headlesschrome</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20230114 20:53:44.085" level="INFO">Opening browser 'headlesschrome' to base url 'https://datncl.top/'.</msg>
+<status status="PASS" starttime="20230114 20:53:44.084" endtime="20230114 20:53:46.173"/>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<arg>//a[contains(text(),'Liên hệ')]</arg>
+<doc>Click the element identified by ``locator``.</doc>
+<msg timestamp="20230114 20:53:46.174" level="INFO">Clicking element '//a[contains(text(),'Liên hệ')]'.</msg>
+<status status="PASS" starttime="20230114 20:53:46.174" endtime="20230114 20:53:46.300"/>
+</kw>
+<kw name="Get Cookie" library="SeleniumLibrary">
+<var>${cookie_value}</var>
+<arg>XSRF-TOKEN</arg>
+<doc>Returns information of cookie with ``name`` as an object.</doc>
+<msg timestamp="20230114 20:53:46.351" level="INFO">${cookie_value} = name=XSRF-TOKEN
+value=eyJpdiI6Im1LMGhEenJESVVNdDdlS1VwYVRZM1E9PSIsInZhbHVlIjoia3E5NVZ5bEZVY2tUYXVFY0xsWEcrbndaNVBtbVp0RFU3VTVoSHdhTCtKdEFlTGVMcEJvVWVXRjFXZDZVVVdNaCtYS3dHMko3R2pYQmt0ZG1uczA5Mk1FTmpWR2...</msg>
+<status status="PASS" starttime="20230114 20:53:46.300" endtime="20230114 20:53:46.351"/>
+</kw>
+<kw name="Close Browser" library="SeleniumLibrary">
+<doc>Closes the current browser.</doc>
+<status status="PASS" starttime="20230114 20:53:46.351" endtime="20230114 20:53:48.397"/>
+</kw>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${header}</var>
+<arg>Content-Type=application/json</arg>
+<arg>X-XSRF-TOKEN=${cookie_value.value}</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:53:48.402" level="INFO">${header} = {'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6Im1LMGhEenJESVVNdDdlS1VwYVRZM1E9PSIsInZhbHVlIjoia3E5NVZ5bEZVY2tUYXVFY0xsWEcrbndaNVBtbVp0RFU3VTVoSHdhTCtKdEFlTGVMcEJvVWVXRjFXZDZVVVdNaCtYS3...</msg>
+<status status="PASS" starttime="20230114 20:53:48.398" endtime="20230114 20:53:48.403"/>
+</kw>
+<kw name="Create Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>${base_production_url}</arg>
+<arg>headers=${header}</arg>
+<doc>Create Session: create a HTTP session to a server</doc>
+<msg timestamp="20230114 20:53:48.406" level="INFO">Creating Session using : alias=myssion, url=https://datncl.top/api, headers={'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6Im1LMGhEenJESVVNdDdlS1VwYVRZM1E9PSIsInZhbHVlIjoia3E5NVZ5bEZVY2tUYXVFY0xsWEcrbndaNVBtbVp0RFU3VTVoSHdhTCtKdEFlTGVMcEJvVWVXRjFXZDZVVVdNaCtYS3dHMko3R2pYQmt0ZG1uczA5Mk1FTmpWR2lCdEtqRTZWc1FCSXRET29MV0poU2tRTzZEeksvWGNjTEI0NVUiLCJtYWMiOiJmNzQzNjgxZjRiMTBlNGRhN2JjMWM1ZjcwZmRiZTZlZTliNzMxN2EwNzI4YTZmM2M2ZTEwMjlmMmUwOGU2NzYyIiwidGFnIjoiIn0%3D'},                     cookies={}, auth=None, timeout=None, proxies=None, verify=False,                     debug=0 </msg>
+<status status="PASS" starttime="20230114 20:53:48.404" endtime="20230114 20:53:48.407"/>
+</kw>
+<status status="PASS" starttime="20230114 20:53:44.083" endtime="20230114 20:53:48.407"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>${EMPTY}</arg>
+<arg>test@gmail.com</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:53:48.412" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:53:48.411" endtime="20230114 20:53:48.413"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:53:48.559" level="INFO">POST Request : url=https://datncl.top/api/contact 
+ path_url=/api/contact 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': '*/*', 'Connection': 'keep-alive', 'Content-Type': 'application/json', 'X-XSRF-TOKEN': 'eyJpdiI6Im1LMGhEenJESVVNdDdlS1VwYVRZM1E9PSIsInZhbHVlIjoia3E5NVZ5bEZVY2tUYXVFY0xsWEcrbndaNVBtbVp0RFU3VTVoSHdhTCtKdEFlTGVMcEJvVWVXRjFXZDZVVVdNaCtYS3dHMko3R2pYQmt0ZG1uczA5Mk1FTmpWR2lCdEtqRTZWc1FCSXRET29MV0poU2tRTzZEeksvWGNjTEI0NVUiLCJtYWMiOiJmNzQzNjgxZjRiMTBlNGRhN2JjMWM1ZjcwZmRiZTZlZTliNzMxN2EwNzI4YTZmM2M2ZTEwMjlmMmUwOGU2NzYyIiwidGFnIjoiIn0%3D', 'Content-Length': '95'} 
+ body=b'{"hoten": "", "email": "test@gmail.com", "sodienthoai": "8528888820", "khoahocquantam": "test"}' 
+ </msg>
+<msg timestamp="20230114 20:53:48.560" level="INFO">POST Response : url=https://datncl.top/api/contact 
+ status=400, reason=Bad Request 
+ headers={'Connection': 'Keep-Alive', 'Keep-Alive': 'timeout=5, max=100', 'x-powered-by': 'PHP/7.4.33', 'cache-control': 'no-cache, private', 'content-type': 'application/json', 'x-ratelimit-limit': '60', 'x-ratelimit-remaining': '58', 'access-control-allow-origin': '*', 'content-length': '42', 'date': 'Sat, 14 Jan 2023 13:53:47 GMT', 'server': 'LiteSpeed', 'alt-svc': 'h3=":443"; ma=2592000, h3-29=":443"; ma=2592000, h3-Q050=":443"; ma=2592000, h3-Q046=":443"; ma=2592000, h3-Q043=":443"; ma=2592000, quic=":443"; ma=2592000; v="43,46"'} 
+ body={"hoten":["The hoten field is required."]} 
+ </msg>
+<msg timestamp="20230114 20:53:48.561" level="INFO">C:\Users\nguye\AppData\Local\Programs\Python\Python39\lib\site-packages\urllib3\connectionpool.py:1013: InsecureRequestWarning: Unverified HTTPS request is being made to host 'datncl.top'. Adding certificate verification is strongly advised. See: https://urllib3.readthedocs.io/en/1.26.x/advanced-usage.html#ssl-warnings
+  warnings.warn(</msg>
+<msg timestamp="20230114 20:53:48.621" level="FAIL">HTTPError: 400 Client Error: Bad Request for url: https://datncl.top/api/contact</msg>
+<status status="FAIL" starttime="20230114 20:53:48.414" endtime="20230114 20:53:48.622"/>
+</kw>
+<msg timestamp="20230114 20:53:48.622" level="INFO">${response} = HTTPError: 400 Client Error: Bad Request for url: https://datncl.top/api/contact</msg>
+<status status="PASS" starttime="20230114 20:53:48.413" endtime="20230114 20:53:48.622"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="PASS" starttime="20230114 20:53:48.622" endtime="20230114 20:53:48.622"/>
+</kw>
+<status status="PASS" starttime="20230114 20:53:48.408" endtime="20230114 20:53:48.623"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linhtest</arg>
+<arg>${EMPTY}</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:53:48.624" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:53:48.624" endtime="20230114 20:53:48.624"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB430&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:02.951" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB280&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:07.427" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FBF40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:11.487" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24061F0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:52:54.659" endtime="20230114 20:53:11.488"/>
+</kw>
+<msg timestamp="20230114 20:53:11.489" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24061F0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:52:54.659" endtime="20230114 20:53:11.489"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:53:11.490" endtime="20230114 20:53:11.491"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:52:54.656" endtime="20230114 20:53:11.492"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linhtest</arg>
+<arg>test@gmail.com</arg>
+<arg>${EMPTY}</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:53:11.496" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:53:11.495" endtime="20230114 20:53:11.496"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:53:15.566" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24106D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:19.845" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2410850&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:24.330" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2410AC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:28.398" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2406100&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:53:11.498" endtime="20230114 20:53:28.398"/>
+</kw>
+<msg timestamp="20230114 20:53:28.400" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2406100&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:53:11.497" endtime="20230114 20:53:28.400"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:53:28.401" endtime="20230114 20:53:28.402"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:53:11.492" endtime="20230114 20:53:28.403"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linhtest</arg>
+<arg>test@gmail.com</arg>
+<arg>88999999999</arg>
+<arg>${EMPTY}</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:53:28.407" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:53:28.406" endtime="20230114 20:53:28.408"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:53:32.487" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2410E80&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:36.767" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24130D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:41.235" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24132B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:45.309" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:53:28.409" endtime="20230114 20:53:45.310"/>
+</kw>
+<msg timestamp="20230114 20:53:45.311" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:53:28.408" endtime="20230114 20:53:45.312"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:53:45.314" endtime="20230114 20:53:45.314"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:53:28.404" endtime="20230114 20:53:45.316"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>${None}</arg>
+<arg>test@gmail.com</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:53:45.322" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:53:45.319" endtime="20230114 20:53:45.322"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:53:49.381" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24259A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:53.655" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413190&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:58.103" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413580&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:02.168" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413520&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:53:45.325" endtime="20230114 20:54:02.168"/>
+</kw>
+<msg timestamp="20230114 20:54:02.168" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413520&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:53:45.324" endtime="20230114 20:54:02.169"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:54:02.169" endtime="20230114 20:54:02.169"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:53:45.317" endtime="20230114 20:54:02.170"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linhtest</arg>
+<arg>${None}</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:54:02.172" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:54:02.171" endtime="20230114 20:54:02.172"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:54:06.245" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2425E80&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:10.512" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F0D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:14.990" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F2B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:19.040" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:54:02.173" endtime="20230114 20:54:19.041"/>
+</kw>
+<msg timestamp="20230114 20:54:19.043" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:54:02.172" endtime="20230114 20:54:19.044"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:54:19.046" endtime="20230114 20:54:19.048"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:54:02.170" endtime="20230114 20:54:19.051"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linhtest</arg>
+<arg>test@gmail.com</arg>
+<arg>${None}</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:54:19.055" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:54:19.054" endtime="20230114 20:54:19.055"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:54:23.117" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F370&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:27.400" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F2B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:31.889" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F250&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:35.957" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2406370&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:54:19.057" endtime="20230114 20:54:35.957"/>
+</kw>
+<msg timestamp="20230114 20:54:35.958" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2406370&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:54:19.056" endtime="20230114 20:54:35.958"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:54:35.958" endtime="20230114 20:54:35.959"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:54:19.052" endtime="20230114 20:54:35.959"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linhtest</arg>
+<arg>test@gmail.com</arg>
+<arg>88999999999</arg>
+<arg>${None}</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:54:35.960" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:54:35.960" endtime="20230114 20:54:35.961"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:54:40.047" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439A60&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:44.339" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439C10&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:48.800" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439E20&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:52.876" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B241F0D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:54:35.961" endtime="20230114 20:54:52.877"/>
+</kw>
+<msg timestamp="20230114 20:54:52.880" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B241F0D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:54:35.961" endtime="20230114 20:54:52.881"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:54:52.884" endtime="20230114 20:54:52.885"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:54:35.959" endtime="20230114 20:54:52.889"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>linh</arg>
+<arg>testgmail.com</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:54:52.895" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:54:52.893" endtime="20230114 20:54:52.895"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:54:56.975" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24132E0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:01.245" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2425E50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:05.752" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2425B50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:09.819" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439D00&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:54:52.899" endtime="20230114 20:55:09.819"/>
+</kw>
+<msg timestamp="20230114 20:55:09.821" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439D00&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:54:52.896" endtime="20230114 20:55:09.821"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:55:09.823" endtime="20230114 20:55:09.823"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:54:52.890" endtime="20230114 20:55:09.825"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>test</arg>
+<arg>test@gmail.com</arg>
+<arg>8899999999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:55:09.831" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:55:09.829" endtime="20230114 20:55:09.831"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:55:13.936" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F3A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:18.205" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E1C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:22.691" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E370&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:26.758" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E580&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:55:09.834" endtime="20230114 20:55:26.759"/>
+</kw>
+<msg timestamp="20230114 20:55:26.760" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E580&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:55:09.832" endtime="20230114 20:55:26.760"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:55:26.761" endtime="20230114 20:55:26.761"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:55:09.826" endtime="20230114 20:55:26.762"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>${text_256_character}</arg>
+<arg>test@gmail.com</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:55:26.766" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:55:26.764" endtime="20230114 20:55:26.766"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:55:30.850" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:35.143" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F1C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:39.627" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24060A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:43.684" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439280&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:55:26.767" endtime="20230114 20:55:43.684"/>
+</kw>
+<msg timestamp="20230114 20:55:43.685" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439280&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:55:26.766" endtime="20230114 20:55:43.686"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:55:43.687" endtime="20230114 20:55:43.687"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:55:26.763" endtime="20230114 20:55:43.688"/>
+</kw>
+<kw name="check_contact_fail" library="Contact">
+<arg>text_256_character</arg>
+<arg>${text_256_character_email}</arg>
+<arg>88999999999</arg>
+<arg>test</arg>
+<arg>400</arg>
+<kw name="Create Dictionary" library="BuiltIn">
+<var>${body}</var>
+<arg>hoten=</arg>
+<arg>email=test@gmail.com</arg>
+<arg>sodienthoai=8528888820</arg>
+<arg>khoahocquantam=test</arg>
+<doc>Creates and returns a dictionary based on the given ``items``.</doc>
+<msg timestamp="20230114 20:55:43.691" level="INFO">${body} = {'hoten': '', 'email': 'test@gmail.com', 'sodienthoai': '8528888820', 'khoahocquantam': 'test'}</msg>
+<status status="PASS" starttime="20230114 20:55:43.690" endtime="20230114 20:55:43.691"/>
+</kw>
+<kw name="Run Keyword And Expect Error" library="BuiltIn">
+<var>${response}</var>
+<arg>HTTPError: 400*</arg>
+<arg>POST On Session</arg>
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Runs the keyword and checks that the expected error occurred.</doc>
+<kw name="POST On Session" library="RequestsLibrary">
+<arg>myssion</arg>
+<arg>/contact</arg>
+<arg>json=${body}</arg>
+<doc>Sends a POST request on a previously created HTTP Session.</doc>
+<msg timestamp="20230114 20:55:47.738" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E400&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:52.056" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E5B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:56.580" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E7C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:56:00.667" level="FAIL">ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E9D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))</msg>
+<status status="FAIL" starttime="20230114 20:55:43.692" endtime="20230114 20:56:00.667"/>
+</kw>
+<msg timestamp="20230114 20:56:00.668" level="FAIL">Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E9D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</msg>
+<status status="FAIL" starttime="20230114 20:55:43.691" endtime="20230114 20:56:00.668"/>
+</kw>
+<kw name="Status Should Be" library="RequestsLibrary">
+<arg>expected_status=${expect_stt}</arg>
+<doc>Fails if response status code is different than the expected.</doc>
+<status status="NOT RUN" starttime="20230114 20:56:00.668" endtime="20230114 20:56:00.669"/>
+</kw>
+<status status="FAIL" starttime="20230114 20:55:43.689" endtime="20230114 20:56:00.669"/>
+</kw>
+<tag>API</tag>
+<status status="FAIL" starttime="20230114 20:52:32.600" endtime="20230114 20:56:00.669">Several failures occurred:
+
+1) Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB970&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.
+
+2) Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24061F0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.
+
+3) Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2406100&gt;: Failed to establish a new connection: [WinE...
+    [ Message content over the limit has been removed. ]
+10) Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E580&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.
+
+11) Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439280&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.
+
+12) Expected error 'HTTPError: 400*' but got 'ConnectionError: HTTPConnectionPool(host='localhost', port=80): Max retries exceeded with url: /Project/tschool/api/contact (Caused by NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E9D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it'))'.</status>
+</test>
+<status status="FAIL" starttime="20230114 20:52:09.983" endtime="20230114 20:56:00.670"/>
 </suite>
 <statistics>
 <total>
-<stat pass="1" fail="0" skip="0">All Tests</stat>
+<stat pass="0" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
-<stat pass="1" fail="0" skip="0">API</stat>
+<stat pass="0" fail="2" skip="0">API</stat>
 </tag>
 <suite>
-<stat pass="1" fail="0" skip="0" id="s1" name="Contact">Contact</stat>
+<stat pass="0" fail="2" skip="0" id="s1" name="Contact">Contact</stat>
 </suite>
 </statistics>
 <errors>
+<msg timestamp="20230114 20:52:19.761" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2316D30&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:52:24.049" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2316310&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:52:28.521" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B230FFD0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:52:41.865" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB3D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:52:46.129" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB550&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:52:50.605" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB760&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:52:58.701" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB430&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:02.951" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FB280&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:07.427" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B23FBF40&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:15.566" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24106D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:19.845" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2410850&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:24.330" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2410AC0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:32.487" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2410E80&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:36.767" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24130D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:41.235" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24132B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:49.381" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24259A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:53.655" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413190&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:53:58.103" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2413580&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:06.245" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2425E80&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:10.512" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F0D0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:14.990" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F2B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:23.117" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F370&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:27.400" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F2B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:31.889" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F250&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:40.047" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439A60&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:44.339" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439C10&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:48.800" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2439E20&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:54:56.975" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24132E0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:01.245" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2425E50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:05.752" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B2425B50&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:13.936" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F3A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:18.205" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E1C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:22.691" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B243E370&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:30.850" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F490&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:35.143" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B242F1C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:39.627" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B24060A0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:47.738" level="WARN">Retrying (RetryAdapter(total=2, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E400&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:52.056" level="WARN">Retrying (RetryAdapter(total=1, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E5B0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
+<msg timestamp="20230114 20:55:56.580" level="WARN">Retrying (RetryAdapter(total=0, connect=None, read=None, redirect=None, status=None)) after connection broken by 'NewConnectionError('&lt;urllib3.connection.HTTPConnection object at 0x00000203B244E7C0&gt;: Failed to establish a new connection: [WinError 10061] No connection could be made because the target machine actively refused it')': /Project/tschool/api/contact</msg>
 </errors>
 </robot>

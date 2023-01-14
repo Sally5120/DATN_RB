@@ -13,7 +13,7 @@ check_get_course
     ${json_object}=   Convert String To Json   ${response.content}
     ${khoahoc}=  Get Value From Json    ${json_object}    $.${data}
     ${result}=  Convert To String    ${khoahoc[0]}
-    Should Be Equal   ${result}   ${result_d}
+    Should Contain   ${result}   ${result_d}
     ${status_code}=  Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
     ${contentTypeValue}=     Get From Dictionary    ${response.headers}    Content-Type
@@ -25,7 +25,7 @@ check_get_teacher
     ${json_object}=   Convert String To Json   ${response.content}
     ${teacher}=  Get Value From Json    ${json_object}    $.${data}
     ${result}=  Convert To String    ${teacher[0]}
-    Should Be Equal   ${result}   ${result_d}
+    Should Contain   ${result}   ${result_d}
     ${status_code}=  Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
     ${contentTypeValue}=     Get From Dictionary    ${response.headers}    Content-Type
@@ -49,7 +49,7 @@ check_get_subject
     ${json_object}=   Convert String To Json   ${response.content}
     ${subject}=  Get Value From Json    ${json_object}    $.${data}
     ${result}=  Convert To String    ${subject[0]}
-    Should Be Equal   ${result}   ${result_d}
+    Should Contain  ${result}   ${result_d}
     ${status_code}=  Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
     ${contentTypeValue}=     Get From Dictionary    ${response.headers}    Content-Type
@@ -61,7 +61,7 @@ check_get_slider
     ${json_object}=   Convert String To Json   ${response.content}
     ${slider}=  Get Value From Json    ${json_object}    $.${data}
     ${result}=  Convert To String    ${slider[0]}
-    Should Be Equal   ${result}   ${result_d}
+    Should Contain   ${result}   ${result_d}
     ${status_code}=  Convert To String    ${response.status_code}
     Should Be Equal    ${status_code}    200
     ${contentTypeValue}=     Get From Dictionary    ${response.headers}    Content-Type

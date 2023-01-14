@@ -1,20 +1,20 @@
 
 *** Settings ***
 Resource   RegisterStudent_User_Defined_Keyword.resource
-Test Setup  Start Testcase
-Test Teardown   Finish Testcase
+Test Setup  Open Admin Site Using Chrome Browser
+Test Teardown   Close Website
 
 *** Variables ***
 
 *** Test Cases ***
 RG01-Register and Verify data register
-     [Setup]  Start Testcase Page
+     [Setup]  Open User Site Using Chrome Browser
      Click Element    //a[contains(text(),'Liên hệ')]
      Sleep  3s
      Input data    Nguyễn Văn A   linh@gmail.com    0988888888    Toán
      Sleep    3s
      Close Browser
-     Start Testcase
+     Open Admin Site Using Chrome Browser
      Redirect not contacted page
      Verify data register   Nguyễn Văn A   linh@gmail.com    0988888888    Toán
 
