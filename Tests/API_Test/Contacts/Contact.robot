@@ -3,7 +3,7 @@ Resource    Contact.resource
 Test Setup  create_new_session
 *** Test Cases ***
 TC01_Contact_Successfully
-    [Tags]      API
+    [Tags]      API_Test
     ${body}=    Create Dictionary   hoten=test     email=test@gmail.com    sodienthoai=8528888820      khoahocquantam=test
     ${response}=    POST On Session    myssion      /contact    json=${body}
     ${status_code}=   Convert To String   ${response.status_code}

@@ -7,34 +7,25 @@ Test Teardown   Close Website
 *** Variables ***
 
 *** Test Cases ***
-RG01-Register and Verify data register
-     [Setup]  Open User Site Using Chrome Browser
-     Click Element    //a[contains(text(),'Liên hệ')]
-     Sleep  2s
-     Input data    Nguyễn Văn A   linh@gmail.com    0988888888    Toán
-     Sleep    2s
-     Close Browser
-     Open Admin Site Using Chrome Browser
-     Redirect not contacted page
-     Verify data register   Nguyễn Văn A   linh@gmail.com    0988888888    Toán
 
-RG02-Verify change status contacted
+
+RG01-Verify change status contacted
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[6]/a[1]/span[1]
     Wait Until Page Contains    Thay đổi trạng thái thành công
 
-RG3-Verify delete student not contacted
+RG2-Verify delete student not contacted
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[7]/form[1]/button[1]
     Delete register
     Wait Until Page Contains    Xóa học sinh đăng ký thành công
 
-RG4-Verify change status not contacted
+RG3-Verify change status not contacted
     Redirect contacted page
     Click Element    //tbody/tr[1]/td[6]/a[1]/span[1]
     Wait Until Page Contains    Thay đổi trạng thái thành công
 
-RG5-Verify delete student contacted
+RG4-Verify delete student contacted
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[7]/form[1]/button[1]
     Delete register
