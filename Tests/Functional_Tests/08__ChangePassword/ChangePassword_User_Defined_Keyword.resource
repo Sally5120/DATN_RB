@@ -12,6 +12,11 @@ Redirect Change Password page
     Wait Until Element Is Visible     //a[@id='change_password']
     Click Element    //a[@id='change_password']
     Sleep    2s
+
+Clear text
+    Clear Element Text    ${locator_password_new}
+    Clear Element Text    ${locator_re_enter_password}
+    Clear Element Text    ${locator_password_old}
 Input data
     [Arguments]     ${password_new}     ${re_enter_password}     ${password_old}
     Input Password      ${locator_password_new}     ${password_new}

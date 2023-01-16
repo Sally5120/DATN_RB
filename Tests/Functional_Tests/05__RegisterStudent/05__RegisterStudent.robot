@@ -55,7 +55,7 @@ SEARCH03-Check search to find data students not contact
 SEARCH04-Check search not find data student not contact
     [Tags]      Search
     Redirect not contacted page
-    Input Text    //input[@type='search']    Nguyễn Văn C
+    Input Text    //input[@type='search']    SAllY
     Sleep    2s
     Page Should Contain    Showing 0 to 0 of 0 entries
 

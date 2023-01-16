@@ -17,7 +17,10 @@ CP02_Verify Change Password Fail-Password old wrong
 CP03_Verify Change Password Successful
      [Tags]     Change Password
      Redirect Change Password page
-     Input data    12345678         12345678          1234567
+     Input data    12345678         12345678          123456
+     Page Should Contain    Đổi mật khẩu thành công
+     Clear text
+     Input data    123456           123456         12345678
      Page Should Contain    Đổi mật khẩu thành công
 
 
