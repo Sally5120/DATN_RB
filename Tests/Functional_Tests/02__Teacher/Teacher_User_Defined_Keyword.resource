@@ -4,7 +4,7 @@ Resource   ../../../Commons/Common.resource
 *** Variables ***
 
 *** Keywords ***
-#Create
+# Create Teachers
 create teacher page is open
     Verify_Login_Successfully
     Click Element    //span[@id='teacher_category']
@@ -40,7 +40,7 @@ show error message
     Page Should Contain         Bạn phải điền thông tin giáo viên
     Page Should Contain         Bạn phải có hình ảnh giáo viên
 
-#Update
+# Update Teachers
 edit teacher page is open
     [Arguments]     ${locator_teacher}
     Verify_Login_Successfully
@@ -87,7 +87,7 @@ show error message edit
     Page Should Contain         Bạn phải điền tóm tắt giáo viên
     Page Should Contain         Bạn phải điền thông tin giáo viên
 
-#Delete
+# Delete Teachers
 delete teacher page is open
     [Arguments]     ${locator_teacher}
     Verify_Login_Successfully
@@ -102,7 +102,7 @@ delete teacher
 show message delete successful
     Wait Until Page Contains    Xóa giáo viên thành công
 
-#Search
+# Search Teachers
 list teacher page is open
     Verify_Login_Successfully
     Click Element    //span[@id='teacher_category']

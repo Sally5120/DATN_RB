@@ -8,6 +8,7 @@ Test Teardown   Close Website
 *** Variables ***
 
 *** Test Cases ***
+# Intergration Test Register Course
 RG01-Register course
     [Tags]  Integration_Test
     When Implement new subjects
@@ -15,6 +16,7 @@ RG01-Register course
     And Implement new course
     Then Successfully created a Geography exam preparation course with teacher
 
+# Intergration Test Register and Verify data register
 RG02_Register and Verify data register
     [Tags]  Integration_Test
      [Setup]  Open User Site Using Chrome Browser

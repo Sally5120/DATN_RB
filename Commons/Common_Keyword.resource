@@ -3,14 +3,14 @@ Resource    Common.resource
 
 *** Keywords ***
 Open Admin Site Using Chrome Browser
-#     Open Browser    ${url_dev_admin}    ${browser}
-    Open Browser    ${url_production_admin}   ${browser}
+     Open Browser    ${url_dev_admin}    ${browser}
+#    Open Browser    ${url_production_admin}   ${browser}
 
     Maximize Browser Window
 
 Open User Site Using Chrome Browser
-#    Open Browser    ${url_dev_page}   ${browser}
-    Open Browser    ${url_production_page}   ${browser}
+    Open Browser    ${url_dev_page}   ${browser}
+#    Open Browser    ${url_production_page}   ${browser}
     Maximize Browser Window
 
 Close Website

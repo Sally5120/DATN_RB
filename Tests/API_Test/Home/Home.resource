@@ -4,7 +4,8 @@ Resource   ../../../Commons/Common.resource
 *** Keywords ***
 
 create_new_session
-    Create Session    myssion    ${base_production_url}
+#    Create Session    myssion    ${base_production_url}
+    Create Session    myssion    ${base_dev_url}
 
 
 check_get_course

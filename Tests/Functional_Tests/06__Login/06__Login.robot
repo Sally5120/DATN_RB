@@ -5,10 +5,12 @@ Test Teardown   Close Website
 
 
 *** Test Cases ***
+# Check login
 L01_Verify Login Successful
+    [Tags]  Check_Login_Successful
     Verify_Login_Successfully
 L02_Verify login fail
-    [Tags]  Check_Login_fail
+    [Tags]  Check_Login_Fail
     [Template]          Verify_Login_Fail   #Username               #Password           #Expect
                                             Sally515                123456               //span[contains(text(),'Mật khẩu hoặc tài khoản không đúng')]          #wrong username
                                             Sally51                 1234567              //span[contains(text(),'Mật khẩu hoặc tài khoản không đúng')]          #wrong password

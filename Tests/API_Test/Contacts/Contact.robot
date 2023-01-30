@@ -11,6 +11,26 @@ TC01_Contact_Successfully
     ${res_body}=    Convert To String    ${response.content}
     Should Contain    ${res_body}    add contact successfully
 
+TC02_Contact_Fail
+     [Tags]      API_Test
+     [Template]     check_contact_fail
+     # ${hoten}                       ${email}                           ${sodienthoai}          ${khoahocquantam}   ${expect_stt}
+     ${EMPTY}                         test@gmail.com                    88999999999              test                400
+     linhtest                         ${EMPTY}                          88999999999              test                400
+     linhtest                         test@gmail.com                    ${EMPTY}                 test                400
+     linhtest                         test@gmail.com                    88999999999              ${EMPTY}            400
+     ${None}                          test@gmail.com                    88999999999              test                400
+     linhtest                         ${None}                           88999999999              test                400
+     linhtest                         test@gmail.com                    ${None}                  test                400
+     linhtest                         test@gmail.com                    88999999999              ${None}             400
+     linh                             testgmail.com                     88999999999              test                400
+     test                             test@gmail.com                    8899999999999999         test                400
+     ${text_256_character}            test@gmail.com                    88999999999              test                400
+     text_256_character               ${text_256_character_email}       88999999999              test                400
+
+
+
+
 
 
 
@@ -32,27 +52,6 @@ TC01_Contact_Successfully
 #     ${text_256_character}            test@gmail.com                    88999999999              test                400              The hoten must not be greater than 255 characters.
 #     text_256_character               ${text_256_character_email}       88999999999              test                400              The email must not be greater than 255 characters.
 #
-
-TC02_Contact_Fail
-     [Tags]      API
-     [Template]     check_contact_fail
-     # ${hoten}                       ${email}                           ${sodienthoai}          ${khoahocquantam}   ${expect_stt}
-     ${EMPTY}                         test@gmail.com                    88999999999              test                400
-     linhtest                         ${EMPTY}                          88999999999              test                400
-     linhtest                         test@gmail.com                    ${EMPTY}                 test                400
-     linhtest                         test@gmail.com                    88999999999              ${EMPTY}            400
-     ${None}                          test@gmail.com                    88999999999              test                400
-     linhtest                         ${None}                           88999999999              test                400
-     linhtest                         test@gmail.com                    ${None}                  test                400
-     linhtest                         test@gmail.com                    88999999999              ${None}             400
-     linh                             testgmail.com                     88999999999              test                400
-     test                             test@gmail.com                    8899999999999999         test                400
-     ${text_256_character}            test@gmail.com                    88999999999              test                400
-     text_256_character               ${text_256_character_email}       88999999999              test                400
-
-
-
-
 
 
 
