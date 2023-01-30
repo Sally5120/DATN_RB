@@ -4,7 +4,7 @@ Resource   ../../../Commons/Common.resource
 *** Variables ***
 
 *** Keywords ***
-#Create
+# Create Courses
 Redirect create course page
     Verify_Login_Successfully
     Click Element    //span[@id='course']
@@ -30,7 +30,7 @@ Create course
     Sleep    2s
     Click Button    //button[@name='themkhoahoc']
 
-#Update
+#Update Courses
 Redirect edit course page
     [Arguments]     ${locator_course}
     Verify_Login_Successfully
@@ -83,7 +83,7 @@ Check require
     Clear Element Text    //input[@name='Soluonghocvien']
     Click Button    //button[@name='suakhoahoc']
 
-#Delete
+# Delete Courses
 Redirect delete course page
     [Arguments]     ${locator_course}
     Verify_Login_Successfully
@@ -94,7 +94,7 @@ Redirect delete course page
 Delete course
    Handle Alert 	action=ACCEPT   timeout=5s
 
-#Search
+# Search Courses
 Redirect search course page
     Verify_Login_Successfully
     Click Element    //span[@id='course']

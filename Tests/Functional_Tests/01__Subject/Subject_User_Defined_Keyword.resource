@@ -4,7 +4,7 @@ Resource   ../../../Commons/Common.resource
 *** Variables ***
 
 *** Keywords ***
-#Create
+# Create subject
 Redirect create subject page
     Verify_Login_Successfully
     Click Element    //span[@id='subject_category']
@@ -21,7 +21,7 @@ Create subject
     Sleep    2s
     Click Button    //button[@name='themmonhoc']
 
-#Update
+# Update subject
 Redirect edit subject page
     [Arguments]     ${locator_subject}
     Verify_Login_Successfully
@@ -55,7 +55,7 @@ Check require
     Clear Element Text    //textarea[@name='mota']
     Click Button    //button[@name='suamonhoc']
 
-#Delete
+# Delete subject
 Redirect delete subject page
     [Arguments]     ${locator_subject}
     Verify_Login_Successfully
@@ -67,7 +67,7 @@ Redirect delete subject page
 Delete subject
    Handle Alert 	action=ACCEPT   timeout=5s
 
-#Search
+# Search subject
 Redirect search subject page
     Verify_Login_Successfully
     Click Element    //span[@id='subject_category']

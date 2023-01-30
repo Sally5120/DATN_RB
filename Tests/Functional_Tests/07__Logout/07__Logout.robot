@@ -5,7 +5,9 @@ Test Teardown   Close Website
 
 
 *** Test Cases ***
+#Check logout
 Logout01_Verify logout Successful
+     [Tags]     Check_Logout
      Redirect Logout
      Wait Until Page Contains Element     //button[@id='button_login']
 

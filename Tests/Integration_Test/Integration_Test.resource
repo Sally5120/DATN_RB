@@ -7,6 +7,7 @@ Resource    ../../Tests/Functional_Tests/05__RegisterStudent/RegisterStudent_Use
 *** Variables ***
 
 *** Keywords ***
+
 Implement new subjects
     Redirect create subject page
                                                 #Tên môn học      #Mô tả                 #Trạng thái

@@ -4,7 +4,7 @@ Resource   ../../../Commons/Common.resource
 *** Variables ***
 
 *** Keywords ***
-#Create
+# Create new
 Redirect create new page
     Verify_Login_Successfully
     Click Element    //span[@id='new_category']
@@ -23,7 +23,7 @@ Create new
     Sleep    2s
     Click Button    //button[@name='themtintuc']
 
-#Update
+# Update new
 Redirect edit new page
     [Arguments]     ${locator_new}
     Verify_Login_Successfully
@@ -63,7 +63,7 @@ Check require
     Clear Element Text    //textarea[@name='noidung']
     Click Button    //button[@name='suatintuc']
 
-#Delete
+# Delete new
 Redirect delete new page
     [Arguments]     ${locator_new}
     Verify_Login_Successfully
@@ -74,7 +74,7 @@ Redirect delete new page
 Delete new
    Handle Alert 	action=ACCEPT   timeout=5s
 
-#Search
+# Search new
 Redirect search new page
     Verify_Login_Successfully
     Click Element    //span[@id='new_category']
