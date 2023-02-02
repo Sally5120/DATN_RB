@@ -43,7 +43,7 @@ UPDATE01-Verify data Teacher
 UPDATE02-Verify update Teacher
     [Tags]      Check_Update_Teacher
     Given edit teacher page is open     //tbody/tr[1]/td[6]/a[1]
-    When input data edit teacher                 Nguyễn Văn B     Tóm tắt     Hà Nội       ${image}\\Teachers\\gv_vatly_toan.png     Không kích hoạt
+    When input data edit teacher                 Nguyễn Văn B     Giáo viên dạy lý     Hà Nội       ${image}\\Teachers\\gv_vatly_toan.png     Không kích hoạt
     And click button edit teacher
     Then show successful teacher edited message
 

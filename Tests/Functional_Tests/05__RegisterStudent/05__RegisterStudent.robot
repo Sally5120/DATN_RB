@@ -13,6 +13,7 @@ RG01-Verify change status contacted
     [Tags]      Check_Change_Status_Student_Register
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[6]/a[1]/span[1]
+    Sleep    3s
     Wait Until Page Contains    Thay đổi trạng thái thành công
 
 # Check delete student status not contacted
@@ -27,7 +28,9 @@ RG2-Verify delete student not contacted
 RG3-Verify change status not contacted
     [Tags]      Check_Change_Status_Student_Register
     Redirect contacted page
+    Sleep    5s
     Click Element    //tbody/tr[1]/td[6]/a[1]/span[1]
+    Sleep    3s
     Wait Until Page Contains    Thay đổi trạng thái thành công
 
 # Check delete student status not contacted

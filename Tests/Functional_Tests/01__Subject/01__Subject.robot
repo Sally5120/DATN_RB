@@ -18,7 +18,7 @@ CREATE02-Check the subject already exists
     Redirect create subject page
     Sleep    2s
                                                 #Tên môn học      #Mô tả                    #Trạng thái
-    Create subject                              Môn Toán Học      Danh mục môn toán         Kích hoạt
+    Create subject                              Môn Ngữ Văn     Danh mục môn văn         Kích hoạt
     Wait Until Page Contains                    Tên môn học đã có.Vui lòng điền tên khác
 
 CREATE03-Check maxlength
@@ -47,7 +47,7 @@ UPDATE02-Verify update subject
     [Tags]      Check_Update_Subject
     Redirect edit subject page      //tbody/tr[1]/td[4]/a[1]
                                     #Tên môn học       #Mô tả                     #Trạng thái
-    Update subject                  Môn Văn Học            Danh mục môn văn       Không kích hoạt
+    Update subject                  Môn Lịch Sử           Danh mục môn lịch sử       Không kích hoạt
     Wait Until Page Contains        Cập nhật danh mục môn học thành công
 
 UPDATE03-Check the subject update already exists

@@ -1,0 +1,5 @@
+${username};${password};${expect};
+Sally515;123456;//span[contains(text(),'Password or username error')];
+Sally51;1234567;//span[contains(text(),'Mật khẩu hoặc tài khoản không đúng')];
+${EMPTY};123456;//div[@data-validate='Vui lòng nhập username'];
+Sally51;${EMPTY};//div[@data-validate='Vui lòng nhập password']
