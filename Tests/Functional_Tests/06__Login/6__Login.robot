@@ -1,9 +1,8 @@
+
 *** Settings ***
 Resource   Login_User_Defined_Keyword.resource
 Test Setup  Open Admin Site Using Chrome Browser
 Test Teardown   Close Website
-
-
 *** Test Cases ***
 # Check login
 L01_Verify Login Successful
@@ -16,3 +15,5 @@ L02_Verify login fail
                                             Sally51                 1234567              //span[contains(text(),'Mật khẩu hoặc tài khoản không đúng')]          #wrong password
                                             ${EMPTY}                123456               //div[@data-validate="Vui lòng nhập username"]                         #input blank username
                                             Sally51                 ${EMPTY}             //div[@data-validate="Vui lòng nhập password"]                         #input blank password
+
+

@@ -4,14 +4,14 @@ Resource    ../../../Commons/Common.resource
 
 *** Keywords ***
 create_new_session
-#    Open Browser    ${url_production_page}    headlesschrome
-    Open Browser    ${url_dev_page}    headlesschrome
+    Open Browser    ${url_production_page}    headlesschrome
+#    Open Browser    ${url_dev_page}    headlesschrome
     Click Element    //a[contains(text(),'Liên hệ')]
     ${cookie_value}=     Get Cookie  XSRF-TOKEN
     Close Browser
     ${header}=  Create Dictionary   Content-Type=application/json       X-XSRF-TOKEN=${cookie_value.value}
-#    Create Session    myssion    ${base_production_url}    headers=${header}
-    Create Session    myssion    ${base_dev_url}    headers=${header}
+    Create Session    myssion    ${base_production_url}    headers=${header}
+#    Create Session    myssion    ${base_dev_url}    headers=${header}
 check_contact_fail
     [Arguments]     ${hoten}     ${email}   ${sodienthoai}  ${khoahocquantam}   ${expect_stt}
     ${body}=    Create Dictionary   hoten=     email=test@gmail.com    sodienthoai=8528888820      khoahocquantam=test

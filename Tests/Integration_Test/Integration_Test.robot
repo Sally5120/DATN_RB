@@ -18,7 +18,7 @@ RG01-Register course
 
 # Intergration Test Register and Verify data register
 RG02_Register and Verify data register
-    [Tags]  Integration_Test
+     [Tags]  Integration_Test
      [Setup]  Open User Site Using Chrome Browser
      Click Element    //a[contains(text(),'Liên hệ')]
      Sleep  2s
