@@ -7,13 +7,13 @@ Test Setup  create_new_session
 TC01_Check_get_course
     [Tags]      API_Test
     [Template]      check_get_course
-    course[0]        Luyện thi Hóa 12
+    course[0]        Luyện thi ngữ văn
 
 
 TC02_Check_get_teacher
     [Tags]      API_Test
     [Template]      check_get_teacher
-    teacher[0]      Nguyễn Thị P
+    teacher[0]      Nguyễn Văn C
 
 
 TC03_Check_get_news
@@ -24,7 +24,7 @@ TC03_Check_get_news
 TC04_Check_get_subject
     [Tags]      API_Test
     [Template]      check_get_subject
-    subject[0]       Môn Hóa Học
+    subject[0]       Môn Toán Học
 
 TC05_Check_get_slider
      [Tags]      API_Test

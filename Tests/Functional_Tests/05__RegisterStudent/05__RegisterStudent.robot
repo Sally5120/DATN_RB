@@ -1,15 +1,28 @@
 
 *** Settings ***
 Resource   RegisterStudent_User_Defined_Keyword.resource
+Resource    RegisterStudent_User_Defined_Keyword.resource
 Test Setup  Open Admin Site Using Chrome Browser
 Test Teardown   Close Website
 
 *** Variables ***
 
 *** Test Cases ***
-
+#Register and Verify data register
+RG01_Register and Verify data register
+     [Tags]  Integration_Test
+     [Setup]  Open User Site Using Chrome Browser
+     Click Element    //a[contains(text(),'Liên hệ')]
+     Sleep  2s
+     Input data    Nguyễn Văn A   linh@gmail.com    0988888888    Toán
+     Sleep    2s
+     Close Browser
+     Open Admin Site Using Chrome Browser
+     Redirect not contacted page
+     Sleep    3s
+     Verify data register   Nguyễn Văn A   linh@gmail.com    0988888888    Toán
 # Check change status contacted
-RG01-Verify change status contacted
+RG02-Verify change status contacted
     [Tags]      Check_Change_Status_Student_Register
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[6]/a[1]/span[1]
@@ -17,7 +30,7 @@ RG01-Verify change status contacted
     Wait Until Page Contains    Thay đổi trạng thái thành công
 
 # Check delete student status not contacted
-RG2-Verify delete student not contacted
+RG3-Verify delete student not contacted
     [Tags]      Check_Delete_Student_Register
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[7]/form[1]/button[1]
@@ -25,7 +38,7 @@ RG2-Verify delete student not contacted
     Wait Until Page Contains    Xóa học sinh đăng ký thành công
 
 # Check change status contacted
-RG3-Verify change status not contacted
+RG4-Verify change status not contacted
     [Tags]      Check_Change_Status_Student_Register
     Redirect contacted page
     Sleep    5s
@@ -34,7 +47,7 @@ RG3-Verify change status not contacted
     Wait Until Page Contains    Thay đổi trạng thái thành công
 
 # Check delete student status not contacted
-RG4-Verify delete student contacted
+RG5-Verify delete student contacted
     [Tags]     Check_Delete_Student_Register
     Redirect not contacted page
     Click Element    //tbody/tr[1]/td[7]/form[1]/button[1]

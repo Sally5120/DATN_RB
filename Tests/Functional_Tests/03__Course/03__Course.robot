@@ -52,14 +52,14 @@ UPDATE02-Verify update course
     [Tags]      Check_Update_Course
     Redirect edit course page    //tbody/tr[1]/td[8]/a[1]
                                      #Tên khóa học           #Tóm tắt  #Thông tin   #Số lượng học viên  #Hình ảnh                           #Môn học        #Giáo viên        #Lịch khai giảng(dd/mm/yyyy)     #Trạng thái
-    Update course                    Luyện thi tiếng anh   Tóm tắt    Hà Nội        15              ${image}\\Courses\\hoa10.png      Môn Tiếng Anh    Nguyễn Văn C    12122022                         Không kích hoạt
+    Update course                    Luyện thi tiếng anh   Tóm tắt    Hà Nội        15              ${image}\\Courses\\hoa10.png      Môn Tiếng Anh    Nguyễn Thị A    12122022                         Không kích hoạt
     Wait Until Page Contains         Cập nhật khóa học thành công
 
 UPDATE03-Check the course update already exists
     [Tags]      Check_Update_Course
     Redirect edit course page    //tbody/tr[1]/td[8]/a[1]
-                                                #Tên khóa học       #Tóm tắt            #Thông tin   #Số lượng học viên  #Hình ảnh                           #Môn học        #Giáo viên            #Lịch khai giảng(dd/mm/yyyy)     #Trạng thái
-    Update course                                Luyện thi vật lý   Luyện thi vật lý    Luyện thi vật lý        15                ${image}\\Courses\\hoa10.png      Môn Vật Lý    Nguyễn Văn C             12122022                        Không kích hoạt
+                                                #Tên khóa học       #Tóm tắt            #Thông tin   #Số lượng học viên  #Hình ảnh                              #Môn học        #Giáo viên            #Lịch khai giảng(dd/mm/yyyy)     #Trạng thái
+    Update course                                Luyện thi vật lý   Luyện thi vật lý    Luyện thi vật lý        15                ${image}\\Courses\\hoa10.png      Môn Vật Lý    Nguyễn Văn L             12122022                        Không kích hoạt
     Wait Until Page Contains                     Tiêu đề khóa học đã có.Vui lòng điền tên khác
 
 
@@ -98,7 +98,7 @@ SEARCH01-Check search find data
 SEARCH02-Check search not find data
     [Tags]      Check_Search_Course
     Redirect search course page
-    Input Text    //input[@type='search']    Luyện thi ngữ văn
+    Input Text    //input[@type='search']    Luyện thi sinh học
     Sleep    3s
     Page Should Contain    No matching records found
 

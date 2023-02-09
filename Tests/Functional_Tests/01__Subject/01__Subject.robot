@@ -10,7 +10,7 @@ CREATE01-Verify Create Subject Successfull
     [Tags]      Check_Create_Subject
     Redirect create subject page
                                                 #Tên môn học      #Mô tả                 #Trạng thái
-    Create subject                              Môn Toán Học      Danh mục môn toán      Kích hoạt
+    Create subject                              Môn Địa Lý      Danh mục môn địa     Kích hoạt
     Wait Until Page Contains                    Thêm danh mục môn học thành công
 
 CREATE02-Check the subject already exists
@@ -41,7 +41,7 @@ UPDATE01-Verify data subject
     [Tags]      Check_Update_Subject
     Redirect edit subject page      //tbody/tr[1]/td[4]/a[1]
                                    #Tên môn học          #Mô tả                   #Trạng thái
-    Verify data                    Môn Toán Học          Danh mục môn toán         Kích hoạt
+    Verify data                    Môn Địa Lý            Danh mục môn địa         Kích hoạt
 
 UPDATE02-Verify update subject
     [Tags]      Check_Update_Subject

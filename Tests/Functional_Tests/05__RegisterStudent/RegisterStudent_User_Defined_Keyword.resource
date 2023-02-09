@@ -4,7 +4,20 @@ Resource  ../../../Commons/Common.resource
 *** Variables ***
 
 *** Keywords ***
+Input data
+    [Arguments]     ${hoten}    ${email}    ${phone}    ${subject}
+    Input Text    //input[@id='name']    ${hoten}
+    Input Text    //input[@id='email']    ${email}
+    Input Text    //input[@id='phone']    ${phone}
+    Input Text    //textarea[@id='message']     ${subject}
+    Click Element    //input[@id='submit']
 
+Verify data register
+    [Arguments]     ${hoten}    ${email}    ${phone}    ${subject}
+    Wait Until Element Contains    //tbody/tr[1]/td[1]    ${hoten}
+    Wait Until Element Contains    //tbody/tr[1]/td[2]    ${email}
+    Wait Until Element Contains    //tbody/tr[1]/td[3]    ${phone}
+    Wait Until Element Contains    //tbody/tr[1]/td[4]    ${subject}
 
 Redirect contacted page
     Verify_Login_Successfully
